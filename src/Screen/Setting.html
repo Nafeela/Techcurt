@@ -1,0 +1,521 @@
+    <!DOCUTYPE>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel='stylesheet' href='../../node_modules/bootstrap-social/bootstrap-social.css'>
+        <link rel='stylesheet' href="../../node_modules/font-awesome/css/font-awesome.min.css">
+        <link rel='stylesheet' href='../CSS/index.css'>
+        
+        <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+        <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
+        <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+       
+        <!-- firebase sdk-->
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
+        <script src="../Js/setting.js" type="javascript"></script>
+        </head>
+    <body>
+        
+       
+           <div class="container">
+                
+            <div class="Card">
+                <div class="header" style="margin-top:30">
+                    <a herf="#"><span class="fa fa-arrow-left"></span></a>
+                </div>
+                <div class="row row-data">
+                    <div class="col-md-2 col-sm-2"></div>
+                    <div class="col-12 col-md-8 col-sm-8 col-lg-5">
+                         
+                            <p id="name">Heyy Dude</p>
+                            <img  alt="avatar" width="100" height="100" style="border-radius: 50%;" class="image" id="prfile-pic" ></img><br/>
+                            <a class="btn btn-primary" style="margin-top: 10px;margin-left: 5px;" id="loginbtn">Login/Signup</a>
+                            <p >To save your likes & bookmarks</p>
+                            <a class="btn " outline  onclick="userLogin('g')"><span class="fa fa-google-plus fa-lg" style="width:20"></span></a>
+                            <a class="btn" onclick="userLogin('f')"><span class="fa fa-facebook fa-lg"></span></a>
+                            
+                            <a class="btn "  onclick="userLogin('t')"><span class="fa fa-twitter fa-lg"></span></a>
+                            <a class="btn"  onclick="userLogin('p')"><span class="fa fa-phone fa-lg"></span></a>
+                        
+                        </div>
+                    <div class=" col-md-2 col-sm-2"></div>
+                </div>
+            </div> 
+                <div class="Card ">
+                    <div class="row ">
+                        <div class="col-md-2 col-sm-2"></div>
+                        <div class="col-12 col-md-8 col-sm-8 col-lg-5 data">
+                                <label style="margin-left: 10px;"> Notification</label>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                  </label>
+                            
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                          
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-md-2 col-sm-2"></div>
+                            <div class="col-12 col-md-8 col-sm-8 col-lg-5 data">
+                                    <label style="margin-left: 10px;"> Languages</label>
+                                <label style="margin-left: 100px;" >
+                                    <select name="lang" >
+                                      <option value="English">English</option>
+                                      <option value="French">French</option>
+                                      <option value="German">German</option>
+                                    </select> 
+                                </label>
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                              
+                                </div>
+                            </div>
+                    </div>
+                 
+<div id="loginModal" class="modal fade " role="dialog">
+    <div class="modal-dialog modal-md" role="content">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" >Login</h4>
+                <button type="button" class="close" data-dismiss="modal">
+                    &times;
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-row">
+                       
+                        <div class="form-group col-md-10">
+                                <label class="sr-only" for="Email"><span>Email address</span></label>
+                                <input type="email" class="form-control form-control-sm mr-1 ml-2" id="Email" placeholder="Enter email">
+                        </div>
+                        <div class="form-group col-md-10">
+                            <label class="sr-only" for="Password">Password</label>
+                            <input type="password" class="form-control form-control-sm mr-1 ml-2" id="Password" placeholder="Password">
+                        </div>
+                        <div class="col-sm-auto">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox">
+                                <label class="form-check-label"> Remember me
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <a onclick="signin()" class="touch"><span>Your not have a Account?</span></a>
+
+                        <button type="submit" class="btn btn-primary btn-sm ml-2 mr-1 btn-md" onclick="userLogin('input')">Sign in</button>        
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="phoneModal" class="modal fade " role="dialog">
+    <div class="modal-dialog modal-md" role="content">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" >Phone Numer verification</h4>
+                <button type="button" class="close" data-dismiss="modal">
+                    &times;
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-row">
+                       
+                        <div class="form-group col-md-10">
+                                <label class="sr-only" for="phoneNumber"><span>PhoneNumer</span></label>
+                                <input type="text" class="form-control form-control-sm mr-1 ml-2 mb-2" id="phoneNumber" placeholder="Enter Your PhoneNumber">
+                                <div id="recaptcha-container" ></div>
+                            </div>
+                        
+                        <div class="form-group col-md-10">
+                            <button type="button" class="btn btn-primary btn-sm ml-2 mr-1 btn-md" onclick="phoneauth()">Send Code</button>
+                        </div>
+                        <div class="form-group col-md-10">
+                            <label class="sr-only" for="OTP">Password</label>
+                            <input type="text" class="form-control form-control-sm mr-1 ml-2" id="OTP" placeholder="OTP">
+                            
+                        </div>
+                        <div class="form-group col-md-10">
+                            <button type="submit" class="btn btn-primary btn-sm ml-2 mr-5 btn-md" onclick="verify()">Verify Code</button>
+                        </div>
+                        
+
+                        </div>
+                    </div>
+                    <div class="form-row">
+                               
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+
+<div id="signinModal" class="modal fade " role="dialog">
+    <div class="modal-dialog modal-md" role="content">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" >Register   </h4>
+                <button type="button" class="close" data-dismiss="modal">
+                    &times;
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-10">
+                                <label class="sr-only" for="Email">Email address</label>
+                                <input type="email" class="form-control form-control-sm mr-1 ml-2" id="Email" placeholder="Enter email">
+                        </div>
+
+                        <div class="form-group col-md-10">
+                            <label class="sr-only" for="Username">Username</label>
+                            <input type="text" class="form-control form-control-sm mr-1 ml-2" id="Username" placeholder="Enter Username">
+                    </div>
+                        <div class="form-group col-md-10">
+                            <label class="sr-only" for="Password">Password</label>
+                            <input type="password" class="form-control form-control-sm mr-1 ml-2" id="Password" placeholder="Password">
+                        </div>
+                        <div class="form-group col-md-10">
+                            <label class="sr-only" for="confirmPassword">Confirm Password</label>
+                            <input type="password" class="form-control form-control-sm mr-1 ml-2" id="confirmPassword" placeholder="Confirm Password">
+                        </div>
+                        </div>
+                    <div class="form-row">
+                        <a onclick="login()" class="touch"><span >Your already have a Account?</span></a>
+                         <button type="submit" class="btn btn-primary btn-sm ml-10 " onclick="userSignin()">Register</button>        
+                    </div>
+                    <div id="firebaseui-auth-container" class="optionsS"></div>
+                    <div id="loader">Loading...</div>
+
+                   
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="Card">
+                    <div class="row ">
+                        <div class="col-md-2 col-sm-2"></div>
+                        <div class="col-12 col-md-8 col-sm-8 col-lg-5 data">
+                            <p style="margin-left: 10px;">Giveus feedback</p>
+                            <p style="margin-left: 10px;">Terms & Conditions</p>
+                            <p style="margin-left: 10px;">Privacy Policy</p>
+                        </div>
+                        <div class="col-md-4 col-sm-4">                                                 </div>     
+                    </div>
+
+                 </div>
+                 <div class="Card">
+                    <div class="row " style="margin-left: 50px;">
+                        <div class="col-md-2 col-sm-2"></div>
+                        <div class="col-12 col-md-8 col-sm-8 col-lg-5 data">
+                          <div>  <label style="margin-left: 10px;">Rateus</label>
+                            <label style="margin-left: 20px;">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span></label></div>
+                                <div>
+                                    <a class="btn btn-primary" style="margin-left: 10px;">Help us to Improve</a>
+                                </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">                                                 </div>     
+                    </div>
+
+                 </div>
+            </div>
+        
+    </body>
+
+<script>
+window.onload = function(){
+    document.getElementById('prfile-pic').src="../images/avatar3.png"
+    var btn= document.getElementById('loginbtn')
+    btn.setAttribute('onclick','login()')
+    firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+                var name=user.displayName!==null?user.displayName:"Hlo there!";
+               document.getElementById("name").innerHTML =name;
+              var img=user.photoURL!==null?user.photoURL:"../images/avatar3.png";
+          document.getElementById('prfile-pic').src=img;
+        
+        var data= document.getElementById('loginbtn')
+              var data= document.getElementById('loginbtn')
+                data.removeAttribute('onclick');
+                data.innerHTML="Logout"
+                data.setAttribute('onclick','userLogout()')
+
+     } else {
+         
+     }
+        });
+
+    
+
+    window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
+    recaptchaVerifier.render();
+  };
+var firebaseConfig = {
+            apiKey: "AIzaSyCiG8WQOdtLtFktx0HsqfTzjmWM6_YV7Bw",
+            authDomain: "techcurt-81cad.firebaseapp.com",
+            databaseURL: "https://techcurt-81cad.firebaseio.com",
+            projectId: "techcurt-81cad",
+            storageBucket: "techcurt-81cad.appspot.com",
+            messagingSenderId: "10107979866",
+            appId: "1:10107979866:web:b3f1dbfe40259af7f57063",
+            measurementId: "G-7X25RJF4Q9"
+          };
+          // Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+var ui = new firebaseui.auth.AuthUI(firebase.auth());
+var uiConfig = {
+  callbacks: {
+    signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+      // User successfully signed in.
+      // Return type determines whether we continue the redirect automatically
+      // or whether we leave that to developer to handle.
+      return true;
+    },
+    uiShown: function() {
+      // The widget is rendered.
+      // Hide the loader.
+      document.getElementById('loader').style.display = 'none';
+    }
+  },
+  // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+  signInFlow: 'popup',
+  signInSuccessUrl: 'login.html',
+  signInOptions: [
+    // Leave the lines as is for the providers you want to offer your users.
+    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+    firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+    firebase.auth.GithubAuthProvider.PROVIDER_ID,
+    firebase.auth.EmailAuthProvider.PROVIDER_ID,
+    firebase.auth.PhoneAuthProvider.PROVIDER_ID
+  ],
+  // Terms of service url.
+  tosUrl: '<your-tos-url>',
+  // Privacy policy url.
+  privacyPolicyUrl: '<your-privacy-policy-url>'
+};
+
+        function login(){
+            $('#loginModal').modal('show')
+            $('#signinModal').modal('hide')
+        }
+        function signin(){
+            $('#loginModal').modal('hide')
+            $('#signinModal').modal('show')
+        }
+        function userLogin(data){
+            if(data==='g'){
+        var provider = new firebase.auth.GoogleAuthProvider();
+
+        firebase.auth().signInWithPopup(provider).then(function(result) {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        var token = result.credential.accessToken;
+        // The signed-in user info.
+        var user = result.user;
+        document.getElementById("name").innerHTML=user.displayName;
+        var img=user.photoURL;
+        document.getElementById('prfile-pic').src=img;
+        
+        var data= document.getElementById('loginbtn')
+        data.removeAttribute('onclick');
+         data.innerHTML="Logout"
+         data.setAttribute('onclick','userLogout()')
+        console.log(user)
+        // ...
+        })
+        .catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        console.log(error)
+        alert(error.message)
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+        // ...
+        });}
+        else if(data==='f'){
+            var provider = new firebase.auth.FacebookAuthProvider();
+            provider.addScope('user_birthday');
+            firebase.auth().useDeviceLanguage();
+            firebase.auth().signInWithPopup(provider).then(function(result) {
+  // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+              var token = result.credential.accessToken;
+  // The signed-in user info.
+             var user = result.user;
+             var data= document.getElementById('loginbtn')
+                data.removeAttribute('onclick');
+                data.innerHTML="Logout"
+                data.setAttribute('onclick','userLogout()')
+                console.log(user)
+        
+            // ...
+            }).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            console.log(errorMessage)
+            alert(error.message)
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ...
+            });
+
+        }
+        else if(data==='t')
+        {
+            var provider = new firebase.auth.TwitterAuthProvider();
+            firebase.auth().useDeviceLanguage();
+            firebase.auth().signInWithPopup(provider).then(function(result) {
+            var token = result.credential.accessToken;
+            var secret = result.credential.secret;
+            var user = result.user;
+            document.getElementById("name").innerHTML=user.displayName;
+                var img=user.photoURL;
+                document.getElementById('prfile-pic').src=img;
+                
+                var data= document.getElementById('loginbtn')
+                data.removeAttribute('onclick');
+                data.innerHTML="Logout"
+                data.setAttribute('onclick','userLogout()')
+                console.log(user)
+            // ...
+            }).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            alert(errorMessage);
+                console.log(errorMessage);
+                console.log(error)
+            });
+
+        }
+        else if(data==='p'){
+            $('#phoneModal').modal('show');
+            }
+            else if(data==='input'){
+                var username=document.getElementById('Email').value;
+       
+                var password=document.getElementById('Password').value
+                alert(username)
+                if(username!=='' && password!==''){
+                    firebase.auth().signInWithEmailAndPassword(username, password)
+                    .then(user=>{
+                        console.log(user)
+                        alert(user.displayName);
+                    })
+                    .catch(err=>{
+                        console.log(err.message)
+                        alert(err.message);
+                    })
+                }
+            }
+                
+            
+ }
+        function userSignin(){
+            var username=document.getElementById('Username').value;
+            var email=document.getElementById('Email').value;
+            var password=document.getElementById('Password').value;
+            
+           
+                if(username !=='' && email !=='' && password!==''){
+                    firebase.auth().createUserWithEmailAndPassword(email, password1)
+                    .then(function(user){
+                        alert("users created")
+                        console.log(user)
+                    })
+                    .catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // ...
+});
+            }   
+            else{
+                alert("type valid details");
+                $('#loginModal').modal('hide')
+             $('#signinModal').modal('show')
+               
+            }
+            
+         
+           
+        }
+        function userLogout(){
+
+
+            firebase.auth().signOut().then(function() {
+                alert("user loged Out")
+            document.getElementById('loginbtn').innerHTML="Login/Signup"
+            document.getElementById("name").innerHTML="Hey Dude";
+            document.getElementById('prfile-pic').src="../images/avatar3.png"
+            var data= document.getElementById('loginbtn')
+             data.setAttribute('onclick','login()')
+            }).catch(function(error) {
+           
+        });
+
+            
+        }
+        phoneauth=()=>{
+            var number=document.getElementById('phoneNumber').value;
+            firebase.auth().signInWithPhoneNumber(number,window.recaptchaVerifier)
+            .then(function(confirmataionCode){
+                window.confirmationResult=confirmataionCode;
+                coderesult=confirmataionCode;
+                console.log(coderesult);
+                alert("Message Send")
+            })
+            .catch(err=>{
+                alert(err.message)
+            })
+        }
+        verify=()=>{
+            var otp=document.getElementById('OTP').value;
+            coderesult.confirm(otp)
+            .then(function(result){
+                alert('SuccessFully Register')
+                var user=result.user;
+                console.log(user);
+                var data= document.getElementById('loginbtn')
+                data.removeAttribute('onclick');
+                data.innerHTML="Logout"
+                data.setAttribute('onclick','userLogout()')
+            })
+            .catch(err=>{
+                alert(err.message)
+            });
+        }
+    </script>
+    </html>
