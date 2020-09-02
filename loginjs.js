@@ -24,7 +24,7 @@
   // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
    
-    document.getElementById('profile-pic').src="/images/avatar3.png"
+    document.getElementById('profile-pic').src="./images/avatar3.png"
     var btn= document.getElementById('loginbtn')
     btn.setAttribute('onclick','login()')
     

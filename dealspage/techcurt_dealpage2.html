@@ -45,6 +45,40 @@
 
 <!-- <script src='https://kit.fontawesome.com/a076d05399.js'></script> -->
 <script>
+     $(document).ready(()=>{
+        $(window).scroll(()=>{
+            if($(document).scrollTop())
+            {
+                var x = document.getElementById("header");
+                var y = document.getElementById("footer");
+                     if (x.style.display === "none" && y.style.display==="none") {
+                         x.style.display = "block";
+                          x.style.position="fixed"
+                          y.style.position="fixed";
+                          y.style.display = "block";
+                         }
+                          else {
+                     x.style.display = "none";
+                     y.style.display = "none";
+                     
+                          }
+                    // }
+                    // if(x.style.display === "block" && y.style.display==="block"){
+                    //     x.style.display = "none";
+                    //       x.style.position="fixed"
+                    //       y.style.position="fixed";
+                    //       y.style.display = "none";
+                    // }
+                    // else{
+                    //     x.style.display = "block";
+                    //  y.style.display = "block";
+                    // }
+            }
+            else{
+                console.log($(document).scrollTop());
+            }
+        })
+    })
 <!-- var prevScrollpos = window.pageYOffset; -->
 <!-- window.onscroll = function() { -->
 <!-- var currentScrollPos = window.pageYOffset; -->

@@ -45,6 +45,20 @@
 
 <!-- <script src='https://kit.fontawesome.com/a076d05399.js'></script> -->
 <script>
+
+    $(document).ready(()=>{
+        $(window).scroll(()=>{
+            if($(document).scrollTop()>150)
+            {
+                myFunction()
+            }
+            else{
+                console.log($(document).scrollTop());
+            }
+        })
+    })
+
+
 <!-- var prevScrollpos = window.pageYOffset; -->
 <!-- window.onscroll = function() { -->
 <!-- var currentScrollPos = window.pageYOffset; -->
@@ -371,7 +385,7 @@ position:absolute;
 color:#00c4cc;
 }
 #footer {
-    position: absolute;
+    position:fixed;
     left: 0;
     right: 0;
     bottom: 0;
@@ -391,7 +405,7 @@ color:#00c4cc;
 margin-top:50px;
 }
 #header {
-    position: absolute;
+    position: fixed;
     left: 0;
     right: 0;
     top: 0;
@@ -430,7 +444,7 @@ width:50%;
 	background-color:#fff;
 }
 #header {
-    position: absolute;
+    position: fixed;
     left: 0;
     right: 0;
     top: 0;
@@ -649,7 +663,7 @@ position:absolute;
 color:#00c4cc;
 }
 #footer {
-    position: absolute;
+    position: fixed;
     left: 0;
     right: 0;
     bottom: 0;
