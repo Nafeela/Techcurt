@@ -1,21 +1,24 @@
 {
-  "name": "techcurt",
+  "name": "techcurt_updated",
   "version": "1.0.0",
-  "description": "\"Progressive Web Apps\"",
-  "main": "./src/Screen/Setting.html",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start":"npm run lite",
+    "start": "npm run lite",
     "lite": "lite-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "bootstrap": "^4.5.2",
     "bootstrap-social": "^5.1.1",
+    "express": "^4.17.1",
     "font-awesome": "^4.7.0",
     "jquery": "^3.5.1",
     "lite-server": "^2.5.4",
+    "morgan": "^1.10.0",
     "popper.js": "^1.16.1"
   }
 }
