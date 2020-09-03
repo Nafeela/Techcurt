@@ -19,12 +19,11 @@ document.getElementById('footer').style.bottom="-50px"
 prevScrollpos = currentScrollPos;
 
     }   }
-function toggle(data){
-if(data==='S'){
-   
-   window.location="../search.html"
-}
-}
+    function toggle(data){
+        if(data==='S'){
+            window.location="../search.html";
+        }
+    }
 function myFunction() {
 var x = document.getElementById("header");
 var y = document.getElementById("footer");
