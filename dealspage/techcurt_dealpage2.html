@@ -45,65 +45,46 @@
 
 <!-- <script src='https://kit.fontawesome.com/a076d05399.js'></script> -->
 <script>
-     $(document).ready(()=>{
-        $(window).scroll(()=>{
-            if($(document).scrollTop())
-            {
-                var x = document.getElementById("header");
-                var y = document.getElementById("footer");
-                     if (x.style.display === "none" && y.style.display==="none") {
-                         x.style.display = "block";
-                          x.style.position="fixed"
-                          y.style.position="fixed";
-                          y.style.display = "block";
-                         }
-                          else {
-                     x.style.display = "none";
-                     y.style.display = "none";
-                     
-                          }
-                    // }
-                    // if(x.style.display === "block" && y.style.display==="block"){
-                    //     x.style.display = "none";
-                    //       x.style.position="fixed"
-                    //       y.style.position="fixed";
-                    //       y.style.display = "none";
-                    // }
-                    // else{
-                    //     x.style.display = "block";
-                    //  y.style.display = "block";
-                    // }
-            }
-            else{
-                console.log($(document).scrollTop());
-            }
-        })
-    })
-<!-- var prevScrollpos = window.pageYOffset; -->
-<!-- window.onscroll = function() { -->
-<!-- var currentScrollPos = window.pageYOffset; -->
-  <!-- if (prevScrollpos > currentScrollPos) { -->
-    <!-- document.getElementById("header").style.top = "0"; -->
-	<!-- document.getElementById("footer").style.top = screen.height; -->
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+        var x = document.getElementById("header");
+        var y = document.getElementById("footer");
 
-  <!-- } else { -->
-    <!-- document.getElementById("header").style.top = "-55px"; -->
-	    <!-- document.getElementById("footer").style.top = "-60px"; -->
+    var currentScrollPos = window.pageYOffset;
+        if(x.style.display==="none"&&y.style.display==="none" ||x.style.display==="block"&&y.style.display==="block"  ){ 
+            x.style.display="block";
+            y.style.display="block";
 
-  <!-- } -->
-  <!-- prevScrollpos = currentScrollPos; -->
-<!-- } -->
+    if (prevScrollpos < currentScrollPos) {
+       
+       document.getElementById("header").style.top = "-50px";
+       document.getElementById('footer').style.bottom="0"
+       } else {
+    document.getElementById("header").style.top = "0px";
+    document.getElementById('footer').style.bottom="-50px"
+}
+prevScrollpos = currentScrollPos;
 
+        }   }
+function toggle(data){
+    if(data==='S'){
+       
+       window.location="../search.html"
+    }
+}
 function myFunction() {
   var x = document.getElementById("header");
     var y = document.getElementById("footer");
   if (x.style.display === "none") {
     x.style.display = "block";
+    x.style.top="0px"
+
   } else {
     x.style.display = "none";
   }
   if (y.style.display === "none") {
     y.style.display = "block";
+    y.style.bottom="0px"
   } else {
     y.style.display = "none";
   }
@@ -141,6 +122,7 @@ height:100%;
 width:100%;
 	height:100%;
 	background-color:#fff;
+    display: block;
 }
 .heading-title {
     margin-bottom: 100px;
@@ -594,7 +576,10 @@ margin-left:20px;
 .team-member:hover .team-hover .s-link {
     bottom: 10%;
 }
-.team-member:hover .team-hover .team-member:hover .team-hover .desk, .team-member:hover .team-hover .s-link {
+.card{
+
+}
+.card:hover .team-hover .card:hover .team-hover .desk, .card:hover .team-hover .s-link {
     opacity: 1;
 }
 .team-hover .s-link {
@@ -614,7 +599,7 @@ margin-left:20px;
     text-align: center;
     color: #fbfbfb;
 }
-.team-member .s-link a {
+.card .s-link a {
     margin: 0 10px;
     color: #333;
     font-size: 16px;
@@ -643,9 +628,10 @@ margin-left:20px;
     letter-spacing: 0px;
 }
 .img-responsive{
-border-radius:30px;
-width:38%;
-height:38%;
+   
+border-radius:25px;
+width:50%;
+height:50%;
 
 }
 .btn-label {position: relative;left: -12px;display: inline-block;padding: 6px 12px;background-color:rgba(0,196,204,0.8);}
@@ -779,13 +765,29 @@ font-size:10px;
 }
 .location{
 position:absolute;
-margin-top:30px;
+margin-top:20px;
 }
 .seebtn{
 position:absolute;
 margin-top:0px;
 margin-left:10px;
 }
+.row-content {
+  margin-left: 30px ;
+  padding: 50px 0px;
+  
+  min-height: 400px; 
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  }
+  .card-img-bottom {
+  color: #fff;
+  height: 20rem;
+  background: url('./images/deal1.jpg') center no-repeat;
+
+}
+
 }
 </style>
 
@@ -803,8 +805,184 @@ margin-left:10px;
 <span class="filtertext">Filter</span>
 
  </div>
-                    <div class="row">
-										            <!-- <h3 class="dealtitle"><b>Top Deals</b></h3> -->
+
+ <div class="row row-content justify-content-center" >
+    
+    <div class="col-6 col-md-4 col-sm-4" >
+        <div class="media" style="margin-top: 50px;">  
+                      <img class="card-img-top img-responsive" src="images//deal1.jpg" alt="team memebr">
+            <div class="card-body">
+                <h5 class="card-title"><b>Samsung Series Tv 5</b></h5>
+                <span style="color:#000;"><p class="card-text">One way security System with keyless entry, free installation</p></span>
+                <span class="old_rate" style="color:#000;">
+                <span style="color:#00c4cc;">$169.60</span>
+                <span style="color:#00c4cc;" >@ Best Buy</span> <del>$179.60</del></span>
+                <span class="location" style="color:#000;font-size:15px;">UK
+                </span>
+        </div>
+        </div>
+    </div>
+    <div class="col-10 col-md-4 col-sm-4  align-items-center " >
+        <div class="card"style="margin-top: 50px;">  
+                      <img class="card-img-top img-responsive" src="images//deal1.jpg" alt="team memebr">
+            <div class="card-body">
+                <h5 class="card-title"><b>Samsung Series Tv 5</b></h5>
+                <span style="color:#000;"><p class="card-text">One way security System with keyless entry, free installation</p></span>
+                <span class="old_rate" style="color:#000;">
+                <span style="color:#00c4cc;">$169.60</span>
+                <span style="color:#00c4cc;" >@ Best Buy</span> <del>$179.60</del></span>
+                <span class="location" style="color:#000;font-size:15px;">UK
+                </span>
+        </div>
+        </div>
+    </div>
+
+    <div class="col-10 col-md-4 col-sm-4  align-items-center " >
+        <div class="card"style="margin-top: 50px;">  
+                      <img class="card-img-top img-responsive" src="images//deal1.jpg" alt="team memebr">
+            <div class="card-body">
+                <h5 class="card-title"><b>Samsung Series Tv 5</b></h5>
+                <span style="color:#000;"><p class="card-text">One way security System with keyless entry, free installation</p></span>
+                <span class="old_rate" style="color:#000;">
+                <span style="color:#00c4cc;">$169.60</span>
+                <span style="color:#00c4cc;" >@ Best Buy</span> <del>$179.60</del></span>
+                <span class="location" style="color:#000;font-size:15px;">UK
+                </span>
+        </div>
+        </div>
+    </div>
+    <div class="col-10 col-md-4 col-sm-4  align-items-center " >
+        <div class="card"style="margin-top: 50px;">  
+                      <img class="card-img-top img-responsive" src="images//deal1.jpg" alt="team memebr">
+            <div class="card-body">
+                <h5 class="card-title"><b>Samsung Series Tv 5</b></h5>
+                <span style="color:#000;"><p class="card-text">One way security System with keyless entry, free installation</p></span>
+                <span class="old_rate" style="color:#000;">
+                <span style="color:#00c4cc;">$169.60</span>
+                <span style="color:#00c4cc;" >@ Best Buy</span> <del>$179.60</del></span>
+                <span class="location" style="color:#000;font-size:15px;">UK
+                </span>
+        </div>
+        </div>
+    </div>
+    <div class="col-10 col-md-4 col-sm-4  align-items-center " >
+        <div class="card"style="margin-top: 50px;">  
+                      <img class="card-img-top img-responsive" src="images//deal1.jpg" alt="team memebr">
+            <div class="card-body">
+                <h5 class="card-title"><b>Samsung Series Tv 5</b></h5>
+                <span style="color:#000;"><p class="card-text">One way security System with keyless entry, free installation</p></span>
+                <span class="old_rate" style="color:#000;">
+                <span style="color:#00c4cc;">$169.60</span>
+                <span style="color:#00c4cc;" >@ Best Buy</span> <del>$179.60</del></span>
+                <span class="location" style="color:#000;font-size:15px;">UK
+                </span>
+        </div>
+        </div>
+    </div>
+
+    <div class="col-10 col-md-4 col-sm-4  align-items-center " >
+        <div class="card"style="margin-top: 50px;">  
+                      <img class="card-img-top img-responsive" src="images//deal1.jpg" alt="team memebr">
+            <div class="card-body">
+                <h5 class="card-title"><b>Samsung Series Tv 5</b></h5>
+                <span style="color:#000;"><p class="card-text">One way security System with keyless entry, free installation</p></span>
+                <span class="old_rate" style="color:#000;">
+                <span style="color:#00c4cc;">$169.60</span>
+                <span style="color:#00c4cc;" >@ Best Buy</span> <del>$179.60</del></span>
+                <span class="location" style="color:#000;font-size:15px;">UK
+                </span>
+        </div>
+        </div>
+    </div>
+    <div class="col-10 col-md-4 col-sm-4  align-items-center " >
+        <div class="card"style="margin-top: 50px;">  
+                      <img class="card-img-top img-responsive" src="images//deal1.jpg" alt="team memebr">
+            <div class="card-body">
+                <h5 class="card-title"><b>Samsung Series Tv 5</b></h5>
+                <span style="color:#000;"><p class="card-text">One way security System with keyless entry, free installation</p></span>
+                <span class="old_rate" style="color:#000;">
+                <span style="color:#00c4cc;">$169.60</span>
+                <span style="color:#00c4cc;" >@ Best Buy</span> <del>$179.60</del></span>
+                <span class="location" style="color:#000;font-size:15px;">UK
+                </span>
+        </div>
+        </div>
+    </div>
+    <div class="col-10 col-md-4 col-sm-4  align-items-center " >
+        <div class="card"style="margin-top: 50px;">  
+                      <img class="card-img-top img-responsive" src="images//deal1.jpg" alt="team memebr">
+            <div class="card-body">
+                <h5 class="card-title"><b>Samsung Series Tv 5</b></h5>
+                <span style="color:#000;"><p class="card-text">One way security System with keyless entry, free installation</p></span>
+                <span class="old_rate" style="color:#000;">
+                <span style="color:#00c4cc;">$169.60</span>
+                <span style="color:#00c4cc;" >@ Best Buy</span> <del>$179.60</del></span>
+                <span class="location" style="color:#000;font-size:15px;">UK
+                </span>
+        </div>
+        </div>
+    </div>
+
+    <div class="col-10 col-md-4 col-sm-4  align-items-center " >
+        <div class="card"style="margin-top: 50px;">  
+                      <img class="card-img-top img-responsive" src="images//deal1.jpg" alt="team memebr">
+            <div class="card-body">
+                <h5 class="card-title"><b>Samsung Series Tv 5</b></h5>
+                <span style="color:#000;"><p class="card-text">One way security System with keyless entry, free installation</p></span>
+                <span class="old_rate" style="color:#000;">
+                <span style="color:#00c4cc;">$169.60</span>
+                <span style="color:#00c4cc;" >@ Best Buy</span> <del>$179.60</del></span>
+                <span class="location" style="color:#000;font-size:15px;">UK
+                </span>
+        </div>
+        </div>
+    </div>
+    <div class="col-10 col-md-4 col-sm-4  align-items-center " >
+        <div class="card"style="margin-top: 50px;">  
+                      <img class="card-img-top img-responsive" src="images//deal1.jpg" alt="team memebr">
+            <div class="card-body">
+                <h5 class="card-title"><b>Samsung Series Tv 5</b></h5>
+                <span style="color:#000;"><p class="card-text">One way security System with keyless entry, free installation</p></span>
+                <span class="old_rate" style="color:#000;">
+                <span style="color:#00c4cc;">$169.60</span>
+                <span style="color:#00c4cc;" >@ Best Buy</span> <del>$179.60</del></span>
+                <span class="location" style="color:#000;font-size:15px;">UK
+                </span>
+        </div>
+        </div>
+    </div>
+    <div class="col-10 col-md-4 col-sm-4  align-items-center " >
+        <div class="card"style="margin-top: 50px;">  
+                      <img class="card-img-top img-responsive" src="images//deal1.jpg" alt="team memebr">
+            <div class="card-body">
+                <h5 class="card-title"><b>Samsung Series Tv 5</b></h5>
+                <span style="color:#000;"><p class="card-text">One way security System with keyless entry, free installation</p></span>
+                <span class="old_rate" style="color:#000;">
+                <span style="color:#00c4cc;">$169.60</span>
+                <span style="color:#00c4cc;" >@ Best Buy</span> <del>$179.60</del></span>
+                <span class="location" style="color:#000;font-size:15px;">UK
+                </span>
+        </div>
+        </div>
+    </div>
+    <div class="col-10 col-md-4 col-sm-4  align-items-center " >
+        <div class="card"style="margin-top: 50px;">  
+                      <img class="card-img-top img-responsive" src="images//deal1.jpg" alt="team memebr">
+            <div class="card-body">
+                <h5 class="card-title"><b>Samsung Series Tv 5</b></h5>
+                <span style="color:#000;"><p class="card-text">One way security System with keyless entry, free installation</p></span>
+                <span class="old_rate" style="color:#000;">
+                <span style="color:#00c4cc;">$169.60</span>
+                <span style="color:#00c4cc;" >@ Best Buy</span> <del>$179.60</del></span>
+                <span class="location" style="color:#000;font-size:15px;">UK
+                </span>
+        </div>
+        </div>
+    </div>
+
+
+</div>                   <!-- <div class="row">
+										            <!-- <h3 class="dealtitle"><b>Top Deals</b></h3> 
                         <div class="col-md-6 col-sm-4"  onclick="myFunction()">
                             <div class="team-member">
                                 <div class="team-img">
@@ -1210,19 +1388,19 @@ margin-left:10px;
 						
 						
                         
-						
+						 -->
 
                     </div>
 					<div id="footer">
-					<i class="navicon"><img style="width:27px; height:32px;"src="images/menu.png"></img> </i>
-		<span class="navtext">Menu</span>
-		<i class="bookmark"><img style="width:27px; height:32px;"src="images/bookmark.png"></img></i>
+					<i class="navicon"onclick="toggle()" ><img style="width:27px; height:32px;"src="images/menu.png"></img> </i>
+		<span class="navtext" >Menu</span>
+		<i class="bookmark" onclick="toggle()"><img style="width:27px; height:32px;"src="images/bookmark.png"></img></i>
 		<span class="bookmarktext">Bookmark</span>
-		<i class="share-alt"><img style="width:27px; height:32px;"src="images/share.png"></img></i>
+		<i class="share-alt" onclick="toggle()"><img style="width:27px; height:32px;"src="images/share.png"></img></i>
 		<span class="sharetext">Share</span>
-		<i class="refresh"><img style="width:27px; height:32px;"src="images/refresh.png"></img></i>
+		<i class="refresh" onclick="toggle()"><img style="width:27px; height:32px;"src="images/refresh.png"></img></i>
 		<span class="refreshtext">Refresh</span>
-		<i class="search"><img style="width:27px; height:32px;"src="images/search1.png"></img></i>
+		<i class="search" onclick="toggle('S')"><img style="width:27px; height:32px;"src="images/search1.png"></img></i>
 		<span class="searchtext">Search</span>
 	
 	
