@@ -42,3 +42,20 @@ y.style.display = "none";
 }
 }
 
+$(document).ready(()=>{
+    fetch('header.html')
+    .then(data=>{
+        return data.text();
+    })
+    .then(dataJson=>{
+        document.getElementById('headerID').innerHTML=dataJson;
+    })
+    fetch('footers.html')
+    .then(data=>{
+        return data.text()
+    })
+    .then(dataJSon=>{
+        document.getElementById('footer').innerHTML=dataJSon;
+    })
+
+})

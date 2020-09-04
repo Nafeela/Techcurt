@@ -17,7 +17,6 @@
 </head>
 <script>
     $(document).ready(()=>{
-        var da=updateData();
         $("#searchNews").focus(()=>{
             
             $('#search').removeClass('fa-search');
@@ -27,11 +26,13 @@
             $('#search').removeClass('fa-close');
             $('#search').addClass('fa-search');  
           
-          
-            
+        
         }); 
+        
         $('#searchNews').keyup((data)=>{
-                $('#result').html('');
+            document.getElementById('result').style.display="block";
+           
+            $('#result').html('');
                 var searchFl=$('#searchNews').val();
                 var exp=new RegExp(searchFl,"i");
                 var api="https://newsapi.org/v2/top-headlines?q="+searchFl+"&country=in&apiKey=bcb6a90c3f2d44ce962d5edf2eaa1b7a"
@@ -56,13 +57,12 @@
                 })
             })  
    });
-   async function updateData(){
-    var data=await  fetch('https://newsapi.org/v2/sources?apiKey=bcb6a90c3f2d44ce962d5edf2eaa1b7a');
-    return await data.json()
-        // res.sources.map((data)=>{
-        //     return data.json();
-        // })
-  }
+   function toggle(){
+       window.location="./newspage/techcurtnews.html";
+   }
+   function back(){
+       window.location="../newspage/techcurtnews.html"
+   }
 </script>
 <style>
     #result{
@@ -83,8 +83,8 @@
     </style>   
 <body>
         <div class="container">
-                    <div class="wrap-search  m-b-23" >
-            <span class="fa fa-arrow-left" id="arrow"></span>
+        <div class="wrap-search  m-b-23" >
+            <span class="fa fa-arrow-left" id="arrow" onclick="back()"></span>
             <i class="fa fa-search" id="search"></i> 
                            
             <input class="search" type="text" name="username" placeholder="Search for News" id="searchNews">
@@ -92,7 +92,7 @@
             <span class="focus-search"></span>
           
         </div>
-        <div id="result" class="list-group" style=" scrollbar-width: none; position: fixed; width: 80%;" ></div>     
+        <div id="result" class="list-group" style=" scrollbar-width: none; position: fixed; width: 80%;" onclick="toggle()"></div>     
         </div>
         
     
