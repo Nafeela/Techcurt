@@ -43,14 +43,14 @@ y.style.display = "none";
 }
 
 $(document).ready(()=>{
-    fetch('header.html')
+    fetch('/js/header.html')
     .then(data=>{
         return data.text();
     })
     .then(dataJson=>{
         document.getElementById('headerID').innerHTML=dataJson;
     })
-    fetch('footers.html')
+    fetch('/js/footers.html')
     .then(data=>{
         return data.text()
     })
@@ -59,3 +59,4 @@ $(document).ready(()=>{
     })
 
 })
+
