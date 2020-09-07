@@ -4,8 +4,7 @@ self.addEventListener("install",e=>{
             return cache.addAll(["./","./images/avatar3.png","./newspage/images/","./dealspage/images/"])
         })
     );
-    console.log(e)
-
+ 
 });
 self.addEventListener('fetch',e=>{
    e.respondWith(
