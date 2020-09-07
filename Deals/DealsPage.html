@@ -4,14 +4,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="../js//scroll.js" rel="javascript" ></script>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="./Deals.css">
-<script src="./Deals.js" rel="javascript" ></script>
+ <link rel="stylesheet" href="./Deals.css"> 
+<!-- <script src="./Deals.js" rel="javascript" ></script> -->
 
 <script>
     var prevScrollpos = window.pageYOffset;
@@ -37,7 +39,7 @@ prevScrollpos = currentScrollPos;
     }   }
     
 function myFunction() {
-var x = document.getElementById("header");
+var x = document.querySelector('header')
 var y = document.getElementById("footer");
 if (x.style.display === "none") {
 x.style.display = "block";
@@ -93,269 +95,399 @@ rest=()=>{
     $('input[type=checkbox]').prop('checked', false);
   };
 </script>
-  </head>
+  </head> 
   <body onclick="myFunction()">
-      <div class="container">
-        <section id="header" >
-            <i class="fas fa-sun" style="color:#00c4cc;margin-top: 7px;margin-right: 3px;right: 387.617px;left: -0.617px;"></i>
-            <span class="themetext">Light</span>
-              <h3 class="headtitle">Top Deals</h3>
-              <a data-toggle="collapse" data-target="#filter"> <i class="sliders"><img style="width:28px; height:28px;margin-top: 3px;margin-right: -6px;padding-top: 2px;"src="../images/filter1.png"></img></i>
-             <span class="filtertext" style="margin-left: 88%;margin-right: 3px;right: 16.333px;margin-top: 36px;">Filter</span></a>
- 
-              </section>  
-                <section class="collapse"id="filter">
-
-                        <div class="inner ">
-                            
-                            <div class="row">
-                            
-                            <div class="col-6 col-sm-6 col-md-6 col-lg-6 p-2 "> 
-                                <span style="color:gray;margin-left: 27px;"> Filters </span>
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-6 col-lg-6 p-2">
-                                <span id="reset" ><a  href="#" style="color: red;;" type="reset" onclick="rest()">Clear All</a></span>
-                            </div>
-                            <hr>
-                            
-                            <div class="col-12 col-sm-12 col-md-10 col-lg-10">
-                                
-                                <input type="search" onkeyup="search()" class="form-control" name="search" id="search" autocomplete="false" placeholder="Search..." aria-label="Search">
-                                <label class="fa fa-search" for="search"></label>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-10 col-lg-10" id="filter">
-                                <ul class="list-group componenets" id="myUl">
-                                <li class="list-group-item">
-                                <input type="checkbox" name="cb" id="cb">
-                                    <label for="cb" id="checkbox">
-                                    <svg viewBox="0 0 100 100">
-                                    <path class="box" d="M82,89H18c-3.87,0-7-3.13-7-7V18c0-3.87,3.13-7,7-7h64c3.87,0,7,3.13,7,7v64C89,85.87,85.87,89,82,89z"/>
-                                        <polyline class="check" points="25.5,53.5 39.5,67.5 72.5,34.5 "/>
-                                    </svg>
-                                    <span style="margin-left: 50px;">Samsung</span>
-                                </label>
-                                </li>
-                                <li class="list-group-item">
-                                <input type="checkbox" name="cb" id="cb2">
-                                    <label for="cb2" id="checkbox">
-                                    <svg viewBox="0 0 100 100">
-                                    <path class="box" d="M82,89H18c-3.87,0-7-3.13-7-7V18c0-3.87,3.13-7,7-7h64c3.87,0,7,3.13,7,7v64C89,85.87,85.87,89,82,89z"/>
-                                        <polyline class="check" points="25.5,53.5 39.5,67.5 72.5,34.5 "/>
-                                    </svg>
-                                    <span style="margin-left: 50px;">Oppo</span>
-                                </label>
-                                </li>
-                            
-                                <li class="list-group-item">
-                                <input type="checkbox" name="cb" id="cb3">
-                                    <label for="cb3" id="checkbox">
-                                    <svg viewBox="0 0 100 100">
-                                    <path class="box" d="M82,89H18c-3.87,0-7-3.13-7-7V18c0-3.87,3.13-7,7-7h64c3.87,0,7,3.13,7,7v64C89,85.87,85.87,89,82,89z"/>
-                                        <polyline class="check" points="25.5,53.5 39.5,67.5 72.5,34.5 "/>
-                                    </svg>
-                                    <span style="margin-left: 50px;">Vivo</span>
-                                </label>
-                                </li>
-                                <li class="list-group-item">
-                                <input type="checkbox" name="cb" id="cb4">
-                                    <label for="cb4" id="checkbox">
-                                    <svg viewBox="0 0 100 100">
-                                    <path class="box" d="M82,89H18c-3.87,0-7-3.13-7-7V18c0-3.87,3.13-7,7-7h64c3.87,0,7,3.13,7,7v64C89,85.87,85.87,89,82,89z"/>
-                                        <polyline class="check" points="25.5,53.5 39.5,67.5 72.5,34.5 "/>
-                                    </svg>
-                                    <span style="margin-left: 50px;">Apple</span>
-                                </label>
-                                </li>
-                                <li class="list-group-item">
-                                <input type="checkbox" name="cb" id="cb5">
-                                    <label for="cb5" id="checkbox">
-                                    <svg viewBox="0 0 100 100">
-                                    <path class="box" d="M82,89H18c-3.87,0-7-3.13-7-7V18c0-3.87,3.13-7,7-7h64c3.87,0,7,3.13,7,7v64C89,85.87,85.87,89,82,89z"/>
-                                        <polyline class="check" points="25.5,53.5 39.5,67.5 72.5,34.5 "/>
-                                    </svg>
-                                    <span style="margin-left: 50px;">Oneplus</span>
-                                </label>
-                                </li>
-                                <li class="list-group-item">
-                                <input type="checkbox" name="cb" id="cb6">
-                                    <label for="cb6" id="checkbox">
-                                    <svg viewBox="0 0 100 100">
-                                    <path class="box" d="M82,89H18c-3.87,0-7-3.13-7-7V18c0-3.87,3.13-7,7-7h64c3.87,0,7,3.13,7,7v64C89,85.87,85.87,89,82,89z"/>
-                                        <polyline class="check" points="25.5,53.5 39.5,67.5 72.5,34.5 "/>
-                                    </svg>
-                                    <span style="margin-left: 50px;">Itel</span>
-                                </label>
-                                </li>
-                                <li class="list-group-item">
-                                <input type="checkbox" name="cb" id="cb7">
-                                    <label for="cb7" id="checkbox">
-                                    <svg viewBox="0 0 100 100">
-                                    <path class="box" d="M82,89H18c-3.87,0-7-3.13-7-7V18c0-3.87,3.13-7,7-7h64c3.87,0,7,3.13,7,7v64C89,85.87,85.87,89,82,89z"/>
-                                        <polyline class="check" points="25.5,53.5 39.5,67.5 72.5,34.5 "/>
-                                    </svg>
-                                    <span style="margin-left: 50px;">Realme</span>
-                                </label>
-                                </li>
-                                <li class="list-group-item">
-                                <input type="checkbox" name="cb" id="cb8">
-                                    <label for="cb8" id="checkbox">
-                                    <svg viewBox="0 0 100 100">
-                                    <path class="box" d="M82,89H18c-3.87,0-7-3.13-7-7V18c0-3.87,3.13-7,7-7h64c3.87,0,7,3.13,7,7v64C89,85.87,85.87,89,82,89z"/>
-                                        <polyline class="check" points="25.5,53.5 39.5,67.5 72.5,34.5 "/>
-                                    </svg>
-                                    <span style="margin-left: 50px;">Nokia</span>
-                                </label>
-                                </li>
-                                
-                                </ul>
-                            
-                                
-                            </div>
-                            <hr>
-                            
-                            </div>
-                            
-
-                        <div class="navbar navbar-bottom-fixed">
-                        <div class="col-6 col-sm-6 col-md-6 col-lg-6">
-                            <a href="./dealspage/techcurt_dealpage2.html" style="color: cadetblue;text-decoration: none;"><span >Cancel</span></a>
+    <header class="navbar navbar-expand bd-navbar d-flex justify-content-between navbar-fixed-top" style="display: none;">
+        <i class="fa fa-sun" style="color:#00c4cc;"></i>
+                <span style="color:#00c4cc;">Light</span>
+                      <h3  style="color:#00c4cc;">Top Deals</h3>
+                      <a data-toggle="collapse" data-target="#filter" data-container="body"data-placement="center" > <i ><img style="width:28px; height:28px;margin-top: 3px;margin-right: -6px;padding-top: 2px;"src="../images/filter1.png"></img></i>
+            <br><span style="color:#00c4cc;">Filter</span></a>
+    </header>
+    <div class="container-fluid ">
+        <div class="row flex-col-nowrap">
+            <div class="d-none d-xl-block col-xl-2 bd-sidebar " id="left">
+                <div class="d-flex flex-column">
+                        <span>   Login to save your likes & bookmarks</span>
+                        <button type="button" class="btn btn-outline-default btn-rounded waves-effect loginbtn"><b>Login</b></button>
+                      
+                        <hr class="hr1">
+                       
+                        <a href="#" style="text-decoration: none;"><br><img width="30px" height="30px" src="../images/home.png"></img>&nbsp;&nbsp;&nbsp;&nbsp;Home</a><br>
+                        <a href="#"  style="text-decoration: none;"><br><img width="30px" height="30px" src="../images/accept.png"></img>&nbsp;&nbsp;&nbsp;&nbsp;Terms</a><br>
+                       <a href="#"  style="text-decoration: none;"><br><img  width="30px" height="30px" src="../images/password.png"></img>&nbsp;&nbsp;&nbsp;&nbsp;Privacy</a><br>
+                        <a href="#"  style="text-decoration: none;"><br><img   width="30px" height="30px"src="../images/copyright.png"></img>&nbsp;&nbsp;&nbsp;&nbsp;Copyright</a>
+                      
+                        <hr class="hr2">
+                        <div class="touch_content">
+                        Get to know us...
                         </div>
-                        <div class="col-6 col-sm-6 col-md-6 col-lg-6">
-                            <a href="#" style="text-decoration: none;"><span>Apply All</span></a>
-                        </div>
-                        </div>
-
+                        <div class="socialbutton">
+                                  <a href="#" class="fa fa-google"></a>
+                                  <a href="#" class="fa fa-facebook"></a>
+                                  <a href="#" class="fa fa-twitter"></a>
+                      
+                                  </div>
+                          <select name="pets" id="pet-select"> 
+                            <option value="">English</option>
                             
+                        </select>
+                      
+                       
+                </div>
+            </div>
+            <div class="d-none d-xl-block col-xl-2 bd-toc" id="right">
+                <div class="d-flex flex-column">
+                    <div class="suggested">
+                    <b>Suggested Topics</b>
+                    <hr class="hr3">
+                    </div>
+                  
+                    <a href="#"><img class="newsimg" src="../images/all.png">  All </a>
+                    <a href="#"><img class="newsimg" src="../images/news.png">   News </a>
+                    <a href="#"><img class="newsimg" src="../images/product.png">Products    </a>
+                    <a href="#"><img class="newsimg" src="../images/review.png">Review  </a>
+                    <a href="#"><img class="newsimg" src="../images/best.png">The Best         </a>
+                    
+                    <a href="#"><img class="newsimg" src="../images/how.png">How to       </a>
+                    <a href="#"><img class="newsimg" src="../images/root.png">Root </a>
+                    
+                    <a href="../dealspage/techcurt_dealpage2.html"><img class="newsimg" src="../images/deals.png">Deals       </a>
+                  
+                    </div>
+                  
+            </div>
+            <main class="col-md-10 col-xl-8 db-content" role="main">
+                <div class="row" id="main" >
+                    <div class="col-md-6 col-sm-12 col-12">
+                       <div class="card flex-row">
+                           <div class="col-sm-4 col-md-4 col-xs-6 col-lg-6" style="top:20">
+                               <img src="images/deal1.jpg" alt="data" class="image img-responsive" width="100px" height="100px" style="top: -14px;">
+                           </div>
+                           <div class="col-sm-8 col-md-8 col-xs-6 col-lg-6 col-7" id="content">
+                             
+                                   <h5 ><b>Samsung Series Tv 5</b></h5>
+                                   <span style="color:#000;"><p>One way security System with keyless entry, free installation</p></span>
+                                   <span style="color:#00c4cc; font-size: 10px;">$169.60  @ Best Buy  <del>$179.60</del></span>
+                                   <br>   <span  style="color:#000;font-size:15px;">UK
+                               </span>
+                             </div>
+                       </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-12">
+                        <div class="card flex-row">
+                            <div class="col-sm-4 col-md-4 col-xs-6 col-lg-6" style="top:20">
+                                <img src="images/deal1.jpg" alt="data" class="image img-responsive" width="100px" height="100px" style="top: -14px;">
                             </div>
-                </section> 
-                <section id="main">
-                                            
-                        <div class="row">
-                            <div class="col-md-6 col-sm-12 col-12">
-                            <div class="card flex-row">
-                                <div class="col-sm-4 col-md-4 col-xs-6 col-lg-6">
-                                    <img src="images/deal1.jpg" alt="data" class="image img-responsive" width="100px" height="100px" >
-                                </div>
-                                <div class="col-sm-8 col-md-8 col-xs-6 col-lg-6" id="content">
-                                    
-                                        <h5 ><b>Samsung Series Tv 5</b></h5>
-                                        <span style="color:#000;"><p>One way security System with keyless entry, free installation</p></span>
-                                        <span style="color:#00c4cc; font-size: 10px;">$169.60  @ Best Buy  <del>$179.60</del></span>
-                                        <span  style="color:#000;font-size:15px;">UK
-                                    </span>
-                                    </div>
-                            </div>
-                            </div>
-                            <div class="col-md-6 col-sm-12 col-12">
-                            <div class="card flex-row">
-                                <div class="col-sm-4 col-md-4 col-xs-6 col-lg-6 col-5">
-                                    <img src="images/deal1.jpg" alt="data" class="image img-responsive" width="100px" height="100px" >
-                                </div>
-                                <div class="col-sm-8 col-md-8 col-xs-6 col-lg-6 col-7" id="content">
-                                    
-                                        <h5 ><b>Samsung Series Tv 5</b></h5>
-                                        <span style="color:#000;"><p>One way security System with keyless entry, free installation</p></span>
-                                        <span style="color:#00c4cc; font-size: 10px;">$169.60  @ Best Buy  <del>$179.60</del></span>
-                                        <span  style="color:#000;font-size:15px;">UK
-                                    </span>
-                                    </div>
-                            </div>
-                            </div>
-                            <div class="col-md-6 col-sm-12 col-12">
-                            <div class="card flex-row">
-                                <div class="col-sm-4 col-md-4 col-xs-6 col-lg-6 col-5">
-                                    <img src="images/deal1.jpg" alt="data" class="image img-responsive" width="100px" height="100px" >
-                                </div>
-                                <div class="col-sm-8 col-md-8 col-xs-6 col-lg-6 col-7" id="content">
-                                    
-                                        <h5 ><b>Samsung Series Tv 5</b></h5>
-                                        <span style="color:#000;"><p>One way security System with keyless entry, free installation</p></span>
-                                        <span style="color:#00c4cc; font-size: 10px;">$169.60  @ Best Buy  <del>$179.60</del></span>
-                                        <span  style="color:#000;font-size:15px;">UK
-                                    </span>
-                                    </div>
-                            </div>
-                            </div>
-                            <div class="col-md-6 col-sm-12 col-12">
-                            <div class="card flex-row">
-                                <div class="col-sm-4 col-md-4 col-xs-6 col-lg-6 col-5">
-                                    <img src="images/deal1.jpg" alt="data" class="image img-responsive" width="100px" height="100px" >
-                                </div>
-                                <div class="col-sm-8 col-md-8 col-xs-6 col-lg-6 col-7" id="content">
-                                    
-                                        <h5 ><b>Samsung Series Tv 5</b></h5>
-                                        <span style="color:#000;"><p>One way security System with keyless entry, free installation</p></span>
-                                        <span style="color:#00c4cc; font-size: 10px;">$169.60  @ Best Buy  <del>$179.60</del></span>
-                                        <span  style="color:#000;font-size:15px;">UK
-                                    </span>
-                                    </div>
-                            </div>
-                            </div>
-                        
+                            <div class="col-sm-8 col-md-8 col-xs-6 col-lg-6 col-7" id="content">
+                              
+                                    <h5 ><b>Samsung Series Tv 5</b></h5>
+                                    <span style="color:#000;"><p>One way security System with keyless entry, free installation</p></span>
+                                    <span style="color:#00c4cc; font-size: 10px;">$169.60  @ Best Buy  <del>$179.60</del></span>
+                                    <br>   <span  style="color:#000;font-size:15px;">UK
+                                </span>
+                              </div>
                         </div>
-                
-                </section>
-
-                <section id="footer">
-
-                        <div id="row" > 
-                            <div class="col-sm col col-md col-lg">
-                            <div>
-                                <img style="width:27px; height:32px;"src="../images/menu.png"></img> 
-                            
+                     </div>
+                     <div class="col-md-6 col-sm-12 col-12">
+                        <div class="card flex-row">
+                            <div class="col-sm-4 col-md-4 col-xs-6 col-lg-6" style="top:20">
+                                <img src="images/deal1.jpg" alt="data" class="image img-responsive" width="100px" height="100px" style="top: -14px;">
                             </div>
-                            <div>
-                                <span>Menu</span>
+                            <div class="col-sm-8 col-md-8 col-xs-6 col-lg-6 col-7" id="content">
+                              
+                                    <h5 ><b>Samsung Series Tv 5</b></h5>
+                                    <span style="color:#000;"><p>One way security System with keyless entry, free installation</p></span>
+                                    <span style="color:#00c4cc; font-size: 10px;">$169.60  @ Best Buy  <del>$179.60</del></span>
+                                    <br>   <span  style="color:#000;font-size:15px;">UK
+                                </span>
+                              </div>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-sm-12 col-12">
+                        <div class="card flex-row">
+                            <div class="col-sm-4 col-md-4 col-xs-6 col-lg-6" style="top:20">
+                                <img src="images/deal1.jpg" alt="data" class="image img-responsive" width="100px" height="100px" style="top: -14px;">
+                            </div>
+                            <div class="col-sm-8 col-md-8 col-xs-6 col-lg-6 col-7" id="content">
+                              
+                                    <h5 ><b>Samsung Series Tv 5</b></h5>
+                                    <span style="color:#000;"><p>One way security System with keyless entry, free installation</p></span>
+                                    <span style="color:#00c4cc; font-size: 10px;">$169.60  @ Best Buy  <del>$179.60</del></span>
+                                    <br>   <span  style="color:#000;font-size:15px;">UK
+                                </span>
+                              </div>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-sm-12 col-12">
+                       <div class="card flex-row">
+                           <div class="col-sm-4 col-md-4 col-xs-6 col-lg-6" style="top:20">
+                               <img src="images/deal1.jpg" alt="data" class="image img-responsive" width="100px" height="100px" style="top: -14px;">
+                           </div>
+                           <div class="col-sm-8 col-md-8 col-xs-6 col-lg-6 col-7" id="content">
+                             
+                                   <h5 ><b>Samsung Series Tv 5</b></h5>
+                                   <span style="color:#000;"><p>One way security System with keyless entry, free installation</p></span>
+                                   <span style="color:#00c4cc; font-size: 10px;">$169.60  @ Best Buy  <del>$179.60</del></span>
+                                   <br>   <span  style="color:#000;font-size:15px;">UK
+                               </span>
+                             </div>
+                       </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-12">
+                        <div class="card flex-row">
+                            <div class="col-sm-4 col-md-4 col-xs-6 col-lg-6" style="top:20">
+                                <img src="images/deal1.jpg" alt="data" class="image img-responsive" width="100px" height="100px" style="top: -14px;">
+                            </div>
+                            <div class="col-sm-8 col-md-8 col-xs-6 col-lg-6 col-7" id="content">
+                              
+                                    <h5 ><b>Samsung Series Tv 5</b></h5>
+                                    <span style="color:#000;"><p>One way security System with keyless entry, free installation</p></span>
+                                    <span style="color:#00c4cc; font-size: 10px;">$169.60  @ Best Buy  <del>$179.60</del></span>
+                                    <br>   <span  style="color:#000;font-size:15px;">UK
+                                </span>
+                              </div>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-sm-12 col-12">
+                       <div class="card flex-row">
+                           <div class="col-sm-4 col-md-4 col-xs-6 col-lg-6" style="top:20">
+                               <img src="images/deal1.jpg" alt="data" class="image img-responsive" width="100px" height="100px" style="top: -14px;">
+                           </div>
+                           <div class="col-sm-8 col-md-8 col-xs-6 col-lg-6 col-7" id="content">
+                             
+                                   <h5 ><b>Samsung Series Tv 5</b></h5>
+                                   <span style="color:#000;"><p>One way security System with keyless entry, free installation</p></span>
+                                   <span style="color:#00c4cc; font-size: 10px;">$169.60  @ Best Buy  <del>$179.60</del></span>
+                                   <br>   <span  style="color:#000;font-size:15px;">UK
+                               </span>
+                             </div>
+                       </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-12">
+                       <div class="card flex-row">
+                           <div class="col-sm-4 col-md-4 col-xs-6 col-lg-6" style="top:20">
+                               <img src="images/deal1.jpg" alt="data" class="image img-responsive" width="100px" height="100px" style="top: -14px;">
+                           </div>
+                           <div class="col-sm-8 col-md-8 col-xs-6 col-lg-6 col-7" id="content">
+                             
+                                   <h5 ><b>Samsung Series Tv 5</b></h5>
+                                   <span style="color:#000;"><p>One way security System with keyless entry, free installation</p></span>
+                                   <span style="color:#00c4cc; font-size: 10px;">$169.60  @ Best Buy  <del>$179.60</del></span>
+                                   <br>   <span  style="color:#000;font-size:15px;">UK
+                               </span>
+                             </div>
+                       </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-12">
+                       <div class="card flex-row">
+                           <div class="col-sm-4 col-md-4 col-xs-6 col-lg-6 col-5" style="top:20">
+                               <img src="images/deal1.jpg" alt="data" class="image img-responsive" width="100px" height="100px" style="top: -14px;">
+                           </div>
+                           <div class="col-sm-8 col-md-8 col-xs-6 col-lg-6 col-7" id="content">
+                             
+                                   <h5 ><b>Samsung Series Tv 5</b></h5>
+                                   <span style="color:#000;"><p>One way security System with keyless entry, free installation</p></span>
+                                   <span style="color:#00c4cc; font-size: 10px;">$169.60  @ Best Buy  <del>$179.60</del></span>
+                                   <br>  <span  style="color:#000;font-size:15px;">UK
+                               </span>
+                             </div>
+                       </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-12">
+                       <div class="card flex-row">
+                           <div class="col-sm-4 col-md-4 col-xs-6 col-lg-6 col-5" style="top:20">
+                               <img src="images/deal1.jpg" alt="data" class="image img-responsive" width="100px" height="100px"style="top: -14px;" >
+                           </div>
+                           <div class="col-sm-8 col-md-8 col-xs-6 col-lg-6 col-7" id="content">
+                             
+                                   <h5 ><b>Samsung Series Tv 5</b></h5>
+                                   <span style="color:#000;"><p>One way security System with keyless entry, free installation</p></span>
+                                   <span style="color:#00c4cc; font-size: 10px;">$169.60  @ Best Buy  <del>$179.60</del></span>
+                                <br>   <span  style="color:#000;font-size:15px;">UK
+                               </span>
+                             </div>
+                       </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-12">
+                       <div class="card flex-row">
+                           <div class="col-sm-4 col-md-4 col-xs-6 col-lg-6 col-5" style="top:20">
+                               <img src="images/deal1.jpg" alt="data" class="image img-responsive" width="100px" height="100px"style="top: -14px;" >
+                           </div>
+                           <div class="col-sm-8 col-md-8 col-xs-6 col-lg-6 col-7" id="content">
+                             
+                                   <h5 ><b>Samsung Series Tv 5</b></h5>
+                                   <span style="color:#000;"><p>One way security System with keyless entry, free installation</p></span>
+                                   <span style="color:#00c4cc; font-size: 10px;">$169.60  @ Best Buy  <del>$179.60</del></span>
+                                   <br> <span  style="color:#000;font-size:15px;">UK
+                               </span>
+                             </div>
+                       </div>
+                    </div>
+                   
+                   </div>
+                       
+            </main>
+        </div>
+    </div>
+    <div id="footer" class="navbar navbar-expand d-flex justify-content-between navbar-bottom">
+            <i><a><img src="images/menu.png" width="30" height="30"></img></a><br>Menu</i>
+            <i><a><img src="images/bookmark.png" width="30" height="30"></img><br>Bookmark</a></i>
+            <i><a><img src="images/share1.png" width="30" height="30"></img><br>Share</a></i>
+            <i><a><img src="images/refresh.png" width="30" height="30"></img><br>Refresh</a></i>
+            <i><a><img src="images/search1.png" width="30" height="30"></img><br>Search</a></i>
+    </div>
+         
+      <!-- <div class="container-fulid">
+          <div class="row">
+              <div class="d-sm-none col-lg-3">
+                <div >
+                    <p>
+                        Hello
+                    </p>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-sm-12 col-lg-6">
+                <section id="header" >
+                    <i class="fas fa-sun" style="color:#00c4cc;margin-top: 7px;margin-right: 3px;right: 387.617px;left: -0.617px;"></i>
+                    <span class="themetext">Light</span>
+                      <h3 class="headtitle">Top Deals</h3>
+                      <a data-toggle="collapse" data-target="#filter" data-container="body"data-placement="center" > <i class="sliders"><img style="width:28px; height:28px;margin-top: 3px;margin-right: -6px;padding-top: 2px;"src="../images/filter1.png"></img></i>
+                     <span class="filtertext" style="margin-left: 88%;margin-right: 3px;right: 16.333px;margin-top: 36px;">Filter</span></a>
+         
+                </section>  
+                 <section id="main">
+                       <div class="row">
+                                <div class="col-md-6 col-sm-12 col-12">
+                                <div class="card flex-row">
+                                    <div class="col-sm-4 col-md-4 col-xs-6 col-lg-6">
+                                        <img src="images/deal1.jpg" alt="data" class="image img-responsive" width="100px" height="100px" >
+                                    </div>
+                                    <div class="col-sm-8 col-md-8 col-xs-6 col-lg-6" id="content">
+                                        
+                                            <h5 ><b>Samsung Series Tv 5</b></h5>
+                                            <span style="color:#000;"><p>One way security System with keyless entry, free installation</p></span>
+                                            <span style="color:#00c4cc; font-size: 10px;">$169.60  @ Best Buy  <del>$179.60</del></span>
+                                            <span  style="color:#000;font-size:15px;">UK
+                                        </span>
+                                        </div>
+                                </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12 col-12">
+                                <div class="card flex-row">
+                                    <div class="col-sm-4 col-md-4 col-xs-6 col-lg-6 col-5">
+                                        <img src="images/deal1.jpg" alt="data" class="image img-responsive" width="100px" height="100px" >
+                                    </div>
+                                    <div class="col-sm-8 col-md-8 col-xs-6 col-lg-6 col-7" id="content">
+                                        
+                                            <h5 ><b>Samsung Series Tv 5</b></h5>
+                                            <span style="color:#000;"><p>One way security System with keyless entry, free installation</p></span>
+                                            <span style="color:#00c4cc; font-size: 10px;">$169.60  @ Best Buy  <del>$179.60</del></span>
+                                            <span  style="color:#000;font-size:15px;">UK
+                                        </span>
+                                        </div>
+                                </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12 col-12">
+                                <div class="card flex-row">
+                                    <div class="col-sm-4 col-md-4 col-xs-6 col-lg-6 col-5">
+                                        <img src="images/deal1.jpg" alt="data" class="image img-responsive" width="100px" height="100px" >
+                                    </div>
+                                    <div class="col-sm-8 col-md-8 col-xs-6 col-lg-6 col-7" id="content">
+                                        
+                                            <h5 ><b>Samsung Series Tv 5</b></h5>
+                                            <span style="color:#000;"><p>One way security System with keyless entry, free installation</p></span>
+                                            <span style="color:#00c4cc; font-size: 10px;">$169.60  @ Best Buy  <del>$179.60</del></span>
+                                            <span  style="color:#000;font-size:15px;">UK
+                                        </span>
+                                        </div>
+                                </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12 col-12">
+                                <div class="card flex-row">
+                                    <div class="col-sm-4 col-md-4 col-xs-6 col-lg-6 col-5">
+                                        <img src="images/deal1.jpg" alt="data" class="image img-responsive" width="100px" height="100px" >
+                                    </div>
+                                    <div class="col-sm-8 col-md-8 col-xs-6 col-lg-6 col-7" id="content">
+                                        
+                                            <h5 ><b>Samsung Series Tv 5</b></h5>
+                                            <span style="color:#000;"><p>One way security System with keyless entry, free installation</p></span>
+                                            <span style="color:#00c4cc; font-size: 10px;">$169.60  @ Best Buy  <del>$179.60</del></span>
+                                            <span  style="color:#000;font-size:15px;">UK
+                                        </span>
+                                        </div>
+                                </div>
+                                </div>
                             
                             </div>
                     
-                            </div>
-                            <div class="col-sm col-sm col col-md col-lg">
-                            <div>
-                                <img style="width:27px; height:32px;"src="../images/bookmark.png"></img> 
+                        </section>
+                        <section id="footer">
+        
+                                <div id="row" > 
+                                    <div class="col-sm col col-md col-lg">
+                                    <div>
+                                        <img style="width:27px; height:32px;"src="../images/menu.png"></img> 
+                                    
+                                    </div>
+                                    <div>
+                                        <span>Menu</span>
+                                    
+                                    </div>
                             
+                                    </div>
+                                    <div class="col-sm col-sm col col-md col-lg">
+                                    <div>
+                                        <img style="width:27px; height:32px;"src="../images/bookmark.png"></img> 
+                                    
+                                    </div>
+                                    <div>
+                                        <span>Bookmark</span>
+                                    
+                                    </div>
+        
+                                </div>
+                                    <div class="col-sm col-sm col col-md col-lg">
+                                    <div>
+                                        <img style="width:27px; height:32px;"src="../images/share.png"></img>
+                                    </div>
+                                    <div>
+                                        <span>Share</span>
+                                    
+                                    </div>
+        
+                                    </div>
+                                    <div class="col-sm col-sm col col-md col-lg">
+                                    <div>
+                                        <img style="width:27px; height:32px;"src="../images/refresh.png"></img>
+                                    </div>
+                                    <div>
+                                        <span>Refresh</span>
+                                    
+                                    </div>
+                                    
+        
+                                </div> 
+                                    <div class="col-sm col-sm col col-md col-lg" >
+                                    <div >
+                                        <a onclick="window.location.href='../search.html'" >  <img style="width:27px; height:32px;"src="../images/search1.png">
+                                    </a>  </div>
+                                    <div>
+                                        <span>Search</span>
+                                    
+                                    </div>
+        
+                                </div>
+                                    
                             </div>
-                            <div>
-                                <span>Bookmark</span>
-                            
-                            </div>
-
-                        </div>
-                            <div class="col-sm col-sm col col-md col-lg">
-                            <div>
-                                <img style="width:27px; height:32px;"src="../images/share.png"></img>
-                            </div>
-                            <div>
-                                <span>Share</span>
-                            
-                            </div>
-
-                            </div>
-                            <div class="col-sm col-sm col col-md col-lg">
-                            <div>
-                                <img style="width:27px; height:32px;"src="../images/refresh.png"></img>
-                            </div>
-                            <div>
-                                <span>Refresh</span>
-                            
-                            </div>
-                            
-
-                        </div> 
-                            <div class="col-sm col-sm col col-md col-lg" >
-                            <div >
-                                <a onclick="window.location.href='../search.html'" >  <img style="width:27px; height:32px;"src="../images/search1.png">
-                            </a>  </div>
-                            <div>
-                                <span>Search</span>
-                            
-                            </div>
-
-                        </div>
-                            
-                    </div>
-                </section>
-
+                        </section>
+        
+            </div> -->
+              <div class="d-sm-none d-none col-lg-3">
+                  <p>left Header</p>
+                </div>
+          </div>
+        
       </div>
   </body>
   </html>
