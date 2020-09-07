@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-    <link rel="stylesheet" type="text/css" href="./css/search.css">
+    <!-- <link rel="stylesheet" type="text/css" href="./css/search.css"> -->
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
@@ -21,8 +21,8 @@ body {
  padding-left: 10px;
   display: grid;
   place-content: center;
-  background: #f2f2f2;
-  font-family: "Montserrat";
+  background: #fff;
+  font-family: "Arial";
   font-weight: bold;
  
 }
@@ -30,26 +30,27 @@ body {
 .inner {
  
   border-radius: 0.3em;
- width:100%;
-  margin-left:10px;
-  margin-right: 10px;
-  box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.04), -7px -7px 5px rgba(255, 255, 255, 0.8);
-  border: 2px solid #ebebeb;
-}
-.components{
-  width: 100%;
+ width:80vw;
+ margin-left:50px;
+ background-color:#fff;
+
+ /* <!-- border: 2px solid #ebebeb; -->*/
 }
 ul{
+  margin-top:120px;
   margin-left: 10px;
   padding-left: 10px;
+  height:80vh;
+z-index:-1;
 }
 ul li{
   place-content: center;
   margin-top: 10px;
+	background-color:#fff;
 }
-.form{
-  width: 100%;
-  
+#filter{
+  margin-top: 10px;
+  z-index: 10px ;
 }
 input[type="checkbox"] {
   display: none;
@@ -89,7 +90,9 @@ input[type="checkbox"]:checked + label .check {
   stroke-dashoffset: 0;
   transition: stroke-dashoffset 0.3s linear;
 }
-
+input[type=checkbox]:checked + label {
+color: #888888;  
+}
 .reverse .box {
   stroke-dashoffset: 0;
   transition: stroke-dashoffset 0.3s linear;
@@ -98,10 +101,75 @@ input[type="checkbox"]:checked + label .check {
   stroke-dashoffset: 70;
   transition: stroke-dashoffset 0.3s linear;
 }
-#bootom{
-  bottom: 0px;
-  position: fixed;
+#bottom{
+  margin-top:85vh;
+  left:13%;
+position:fixed;
+border-radius:10px;
+border:1px solid #d3d3d3;
+width:30%;
+text-align:center;
+background-color:#fff;
+z-index:15;
 }
+#bottom1{
+margin-top:85vh;
+  left:8%;
+position:fixed;
+margin-left:50%;
+width:30%;
+border-radius:10px;
+border:1px solid #d3d3d3;
+text-align:center;
+background-color:#fff;
+z-index:15;
+}
+#brand{
+  
+  top:0px;
+left:0px;
+position:fixed;
+background-color:#fff;
+width:100%;
+border-top:0.5px solid #d3d3d3;
+text-align:center;
+
+z-index:10;
+height:18%;
+}
+.search{
+position:fixed;
+margin-top:50px;
+width:80%;
+border:2px solid #d3d3d3;
+border-radius:15px;
+margin-bottom:20px;
+outline:none;
+z-index:100;
+}
+.search:focus{
+text-indent:10px;
+}
+span{
+height:40px;
+font-size:15px;
+}
+svg{
+margin-left:100px;
+}
+.foot{
+bottom:0px;
+left:0px;
+position:fixed;
+background-color:#fff;
+width:100%;
+border-top:0.5px solid #d3d3d3;
+text-align:center;
+z-index:5;
+height:8%;
+
+}
+
 
 </style>
 
@@ -192,107 +260,135 @@ function search(){
   <div class="inner ">
     
     <div class="row">
-      
-      <div class="col-6 col-sm-6 col-md-6 col-lg-6 p-2 "> 
-          <span style="color:gray;margin-left: 27px;"> Filters </span>
-      </div>
-      <div class="col-6 col-sm-6 col-md-6 col-lg-6 p-2">
-          <span id="reset" ><a  href="#" style="color:#00c4cc;" type="reset" onclick="rest()">Clear All</a></span>
-      </div>
-      <hr>
-     
-       <div class="col-12 col-sm-12 col-md-10 col-lg-10">
+      <div id="brand" class="navbar-fixed-top">
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6 d-inline -2" style="margin-left: 0px;left: -18px;">
+          <span style="color:gray;width:40%;"> BRAND </span> </div>
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6 d-inline p-2"style="margin-left: 100px;left: 2px;margin-right: 9px;" >
+          <span id="reset" ><a  href="#" style="color:#000;width:40%;" type="reset" onclick="rest()">Clear All</a></span>
+        </div>  
+       </div>
+       <div class="col-12 col-sm-12 col-md-12 col-lg-6 offset-lg-2 d-inline">
         <div class="wrap-search  m-b-23" >
                  
                          
-          <input class="search" onkeyup="search()"  type="text" name="search" id="search" autocomplete="false" placeholder="Search..." aria-label="Search">
+          <input class="search" onkeyup="search()"  type="text" name="search" id="search" autocomplete="false" placeholder="   Search..." aria-label="Search">
           
           <span class="focus-search"></span>
         
       </div>
-             
+       </div>
        <div class="col-12 col-sm-6 col-md-10 col-lg-10" id="filter">
-        <ul class="list-group componenets" id="myUl">
-          <li class="list-group-item">
+        <ul class = "list-unstyled" id="myUl">
+          <li>
           <input type="checkbox" name="cb" id="cb">
         
             <label for="cb" id="checkbox">
+			            <span style="margin-left: 0px;width:30vw;">Samsung</span>
             <svg viewBox="0 0 100 100">
               <path class="box" d="M82,89H18c-3.87,0-7-3.13-7-7V18c0-3.87,3.13-7,7-7h64c3.87,0,7,3.13,7,7v64C89,85.87,85.87,89,82,89z"/>
                 <polyline class="check" points="25.5,53.5 39.5,67.5 72.5,34.5 "/>
             </svg>
-            <span style="margin-left: 50px;">Samsung</span>
         </label>
         </li>
-        <li class="list-group-item">
+        <li>
           <input type="checkbox" name="cb" id="cb2">
             <label for="cb2" id="checkbox">
+			<span style="margin-left:0px; width:30vw;">Oppo</span>
             <svg viewBox="0 0 100 100">
               <path class="box" d="M82,89H18c-3.87,0-7-3.13-7-7V18c0-3.87,3.13-7,7-7h64c3.87,0,7,3.13,7,7v64C89,85.87,85.87,89,82,89z"/>
                 <polyline class="check" points="25.5,53.5 39.5,67.5 72.5,34.5 "/>
             </svg>
-            <span style="margin-left: 50px;">Oppo</span>
         </label>
         </li>
        
-          <li class="list-group-item">
+          <li>
           <input type="checkbox" name="cb" id="cb3">
             <label for="cb3" id="checkbox">
+			<span style="margin-left:0px; width:30vw;">Vivo</span>
             <svg viewBox="0 0 100 100">
               <path class="box" d="M82,89H18c-3.87,0-7-3.13-7-7V18c0-3.87,3.13-7,7-7h64c3.87,0,7,3.13,7,7v64C89,85.87,85.87,89,82,89z"/>
                 <polyline class="check" points="25.5,53.5 39.5,67.5 72.5,34.5 "/>
             </svg>
-            <span style="margin-left: 50px;">Vivo</span>
         </label>
         </li>
-        <li class="list-group-item">
+        <li>
           <input type="checkbox" name="cb" id="cb4">
             <label for="cb4" id="checkbox">
+			<span style="margin-left:0px; width:30vw;">Apple</span>
             <svg viewBox="0 0 100 100">
               <path class="box" d="M82,89H18c-3.87,0-7-3.13-7-7V18c0-3.87,3.13-7,7-7h64c3.87,0,7,3.13,7,7v64C89,85.87,85.87,89,82,89z"/>
                 <polyline class="check" points="25.5,53.5 39.5,67.5 72.5,34.5 "/>
             </svg>
-            <span style="margin-left: 50px;">Apple</span>
         </label>
         </li>
-        <li class="list-group-item">
+        <li>
           <input type="checkbox" name="cb" id="cb5">
             <label for="cb5" id="checkbox">
+			<span style="margin-left:0px; width:30vw;">Oneplus</span>
             <svg viewBox="0 0 100 100">
               <path class="box" d="M82,89H18c-3.87,0-7-3.13-7-7V18c0-3.87,3.13-7,7-7h64c3.87,0,7,3.13,7,7v64C89,85.87,85.87,89,82,89z"/>
                 <polyline class="check" points="25.5,53.5 39.5,67.5 72.5,34.5 "/>
             </svg>
-            <span style="margin-left: 50px;">Oneplus</span>
         </label>
         </li>
-        <li class="list-group-item">
+        <li>
           <input type="checkbox" name="cb" id="cb6">
             <label for="cb6" id="checkbox">
+			<span style="margin-left:0px; width:30vw;">Itel</span>
             <svg viewBox="0 0 100 100">
               <path class="box" d="M82,89H18c-3.87,0-7-3.13-7-7V18c0-3.87,3.13-7,7-7h64c3.87,0,7,3.13,7,7v64C89,85.87,85.87,89,82,89z"/>
                 <polyline class="check" points="25.5,53.5 39.5,67.5 72.5,34.5 "/>
             </svg>
-            <span style="margin-left: 50px;">Itel</span>
         </label>
         </li>
-        <li class="list-group-item">
+        <li>
           <input type="checkbox" name="cb" id="cb7">
             <label for="cb7" id="checkbox">
+			<span style="margin-left:0px; width:30vw;">Realme</span>
             <svg viewBox="0 0 100 100">
               <path class="box" d="M82,89H18c-3.87,0-7-3.13-7-7V18c0-3.87,3.13-7,7-7h64c3.87,0,7,3.13,7,7v64C89,85.87,85.87,89,82,89z"/>
                 <polyline class="check" points="25.5,53.5 39.5,67.5 72.5,34.5 "/>
             </svg>
-            <span style="margin-left: 50px;">Realme</span>
         </label>
         </li>
-        <li class="list-group-item">
+        <li>
           <input type="checkbox" name="cb" id="cb8">
             <label for="cb8" id="checkbox">
+			<span style="margin-left:0px; width:30vw;">Nokia</span>
             <svg viewBox="0 0 100 100">
               <path class="box" d="M82,89H18c-3.87,0-7-3.13-7-7V18c0-3.87,3.13-7,7-7h64c3.87,0,7,3.13,7,7v64C89,85.87,85.87,89,82,89z"/>
                 <polyline class="check" points="25.5,53.5 39.5,67.5 72.5,34.5 "/>
             </svg>
-            <span style="margin-left: 50px;">Nokia</span>
+        </label>
+        </li>
+		<li>
+          <input type="checkbox" name="cb" id="cb9">
+            <label for="cb9" id="checkbox">
+			<span style="margin-left:0px; width:30vw;">Huawei</span>
+            <svg viewBox="0 0 100 100">
+              <path class="box" d="M82,89H18c-3.87,0-7-3.13-7-7V18c0-3.87,3.13-7,7-7h64c3.87,0,7,3.13,7,7v64C89,85.87,85.87,89,82,89z"/>
+                <polyline class="check" points="25.5,53.5 39.5,67.5 72.5,34.5 "/>
+            </svg>
+        </label>
+        </li>
+		<li>
+          <input type="checkbox" name="cb" id="cb10">
+            <label for="cb10" id="checkbox">
+			<span style="margin-left:0px; width:30vw;">Redmi</span>
+            <svg viewBox="0 0 100 100">
+              <path class="box" d="M82,89H18c-3.87,0-7-3.13-7-7V18c0-3.87,3.13-7,7-7h64c3.87,0,7,3.13,7,7v64C89,85.87,85.87,89,82,89z"/>
+                <polyline class="check" points="25.5,53.5 39.5,67.5 72.5,34.5 "/>
+            </svg>
+        </label>
+        </li>
+		<li>
+          <input type="checkbox" name="cb" id="cb11">
+            <label for="cb12" id="checkbox">
+			<span style="margin-left:0px; width:30vw;">Blackberry</span>
+            <svg viewBox="0 0 100 100">
+              <path class="box" d="M82,89H18c-3.87,0-7-3.13-7-7V18c0-3.87,3.13-7,7-7h64c3.87,0,7,3.13,7,7v64C89,85.87,85.87,89,82,89z"/>
+                <polyline class="check" points="25.5,53.5 39.5,67.5 72.5,34.5 "/>
+            </svg>
         </label>
         </li>
         
@@ -300,20 +396,17 @@ function search(){
       
         
       </div>
-      <hr>
       
-    </div>
-     
-
     
-  <div class="col-6 col-sm-6 col-md-6 col-lg-6 " id="bottom">
-    <a href="./dealspage/techcurt_dealpage2.html" style="color: cadetblue;text-decoration: none;"><span >Cancel</span></a>
+     
+<div class="foot " >
+  <div class="col-6 col-sm-6 col-md-6 col-lg-6 d-inline -2" style="margin-left: 0px;left: -18px;">
+    <a href="./dealspage/techcurt_dealpage2.html" style="color: #000;text-decoration: none; "><span >Cancel</span></a>
   </div>
-  <div class="col-6 col-sm-6 col-md-6 col-lg-6">
-    <a href="#" style="text-decoration: none; margin-left: 10px; color:#00c4cc"><span>Apply All</span></a>
+  <div class="col-6 col-sm-6 col-md-6 col-lg-6 d-inline p-2"style="margin-left: 100px;left: 2px;margin-right: 9px;" >
+    <a href="#" style="text-decoration: none; color:#000;"><span>Apply All</span></a>
   </div>
-
-
+</div>>
        
     </div>
   

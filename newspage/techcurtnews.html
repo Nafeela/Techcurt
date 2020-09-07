@@ -5,8 +5,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
-  <link href="header.html" rel="import" />
-  <link href="footer.html" rel="import" />
+
   <script src='https://kit.fontawesome.com/a076d05399.js'></script>
   <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -34,17 +33,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-
-
-
+        <script src="../js//scroll.js" rel="javascript" ></script>
+        <script src="../js//index.js" rel="javascript" ></script>
   <style>
-
-  #pageone{
-
-
-  }
-
-
   html {
     height: 100%;
   }
@@ -79,6 +70,23 @@
 
   @media only screen and (max-width:500px) {
 
+    #footer{
+        position:absolute;
+        background:#fff;    
+        left: 0;
+        width: 100%;
+        bottom: 0; 
+       
+    border-radius:10px 10px 0px 0px;
+      position: fixed;
+  border-top: 1px solid #d3d3d3;
+        transition: bottom 0.6s;
+        box-shadow:  10 10px 10px 0 gray;
+      -moz-box-shadow:10 10px 10px 0 gray;
+      -webkit-box-shadow:10 10px 10px 0 gray;
+      -o-box-shadow: 10 10px 10px 0 gray;
+
+   }    
   img{
   width:100%;
   height:250px;
@@ -263,6 +271,25 @@
 
 
   @media only screen and (min-width:500px) {
+    #footer{
+        position:absolute;
+        background:#fff;    
+        left: 0;
+        width: 53%;
+        bottom: 0; 
+        z-index: 99;
+        margin-left:25vw;  
+	border-radius:10px 10px 0px 0px;
+      position: fixed;
+      
+  border-top: 1px solid #d3d3d3;
+        transition: bottom 0.6s;
+        box-shadow:  10 10px 10px 0 gray;
+      -moz-box-shadow:10 10px 10px 0 gray;
+      -webkit-box-shadow:10 10px 10px 0 gray;
+      -o-box-shadow: 10 10px 10px 0 gray;
+
+   }     
   .desktophead{
   width:100% !important;
   height:8% !important;
@@ -545,10 +572,9 @@
 
   </style>
   </head>
-  <body>
-  <div class="desktophead">
-
-  </div>	
+  <body onclick="myFunction()">
+  
+    <div id="headerID"></div>
   <div data-role="page" id="pageone" onclick="myFunction()">
     
 
@@ -596,7 +622,7 @@
       
       <!-- <div id="content"></div> -->
     <!-- </div> -->
-    <div class="news">
+    <div class="news" >
     <p class="team">Curt by team - Today</p>
 
   <h3>OxygenOS 10.5.10 rolling out now for EU OnePlus Pro</h3>
@@ -668,6 +694,7 @@
   </div>
 
   </div> 
+  <div id="footer"></div>
 
 
   </body>
