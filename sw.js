@@ -1,3 +1,15 @@
+const staticAccess=[
+    './',
+    './News/NewsPage.html',
+    './News/News.css',
+    './News/News.js',
+    './Deals/DealsPage.html',
+    './Deals/Deals.js',
+    './Deals/Deals.css',
+    './images/'
+    
+]
+
 self.addEventListener("install",e=>{
     e.waitUntil(
         caches.open('static').then(cache=>{
