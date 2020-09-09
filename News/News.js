@@ -24,7 +24,7 @@
 //                 .fadeOut(200, function() {
 //                     $mainContent.hide().load(newHash + " #data", function() {
 //                         $mainContent.fadeIn(200, function() {
-//                             $pageWrap.animate({
+//                             $pageWrap.animate({a songs tamil
 //                                 height: baseHeight + $mainContent.height() + "px"
 //                             });
 //                         });
@@ -73,7 +73,7 @@ $(document).ready(function() {
                
              
    document.getElementById("header").style.top = "-50px";
-   document.getElementById('footer').style.bottom="0"
+   document.getElementById('footer').style.bottom="-50px";
    } else {
 document.getElementById("header").style.top = "0px";
 document.getElementById('footer').style.bottom="-50px"

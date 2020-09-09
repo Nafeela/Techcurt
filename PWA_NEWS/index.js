@@ -1,7 +1,7 @@
 if("serviceWorker" in navigator){
-    navigator.serviceWorker.register("./sw.js").then(registration=>{
+    navigator.serviceWorker.register("sw.js").then(registration=>{
         
-        console.log("SW registered");
+        console.log("SW registered PWA");
         console.log(registration)
     })
     .catch(error=>{
