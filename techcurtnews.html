@@ -2,11 +2,14 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	
-<link href="header.html" rel="import" />
+<!-- <link href="header.html" rel="import" />
 <link href="footer.html" rel="import" />
+<script src="js/scroll.js" type="javascript"></script> -->
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -44,6 +47,9 @@
 
 }
 
+#footer{
+  display: none;
+}
 
 html {
   height: 100%;
@@ -71,13 +77,56 @@ color:#00c4cc;
 }
 .fas{
 color:transparent;
-   -webkit-text-stroke-width: 2px;
+   -webkit-text-stroke-width: 2px;card.style.top="0px";
+
    -webkit-text-stroke-color: #00c4cc;
    
 }
 
 
 @media only screen and (max-width:500px) {
+.desktophead{
+  display: none;
+  width: 100%!important;
+  height: 10vh;
+  position: absolute;
+  top: 0vh;
+  left:0px;
+  right: 0px;
+  
+  background-color: #fbfbfb;
+      z-index:99;
+  
+      position:fixed;
+    
+      
+  border-bottom: 1px solid #d3d3d3;
+  transition: bottom 0.6s;
+  
+}
+  .footer{
+  display: none;
+  width: 100%!important;
+  height: 10vh;
+  position: absolute;
+  bottom: 0vh;
+  left:0px;
+  right: 0px;
+  
+  background-color: #fbfbfb;
+      z-index:99;
+  
+      position:fixed;
+    
+      
+  border-top: 1px solid #d3d3d3;
+  transition: bottom 0.6s;
+  
+}
+.img-respons{
+  width: 5vw;
+  height: 5vh;
+}
 
 img{
 width:100%;
@@ -258,14 +307,57 @@ box-shadow:  0 0 5px  rgba(136,136,136,0.6);
   display:none;
 
  }
- 
+ .lightText{
+  margin-left: -120px;
+  margin-top: 32px;
+ }
 }
 
 
 @media only screen and (min-width:500px) {
-.desktophead{
- width:100% !important;
- height:8% !important;
+  .lightText{
+    margin-left: -41%;
+    margin-top: 32px;
+  }
+  .footer{
+    width:110vh;
+ height:11.5vh;
+ position: absolute;
+ left: 24.6%;
+      right: 0;
+      bottom: 0px;
+     background-color: #fbfbfb;
+     display: none;  
+      border-radius:10px 10px 0px 0px;
+      z-index:99;
+  
+      position:fixed;
+    
+      
+  border-top: 1px solid #d3d3d3;
+  
+  }
+  .img-respons{
+    width: 5vh;
+    height: 5vh;
+  }
+  .desktophead{
+    
+    width:110vh;
+ height:11.5vh;
+ left:24.6%;
+      right: 0;
+      top: 0;
+     background-color: #fbfbfb;
+      z-index:99;
+  
+      position:fixed;
+    
+      
+  border-bottom: 1px solid #d3d3d3;
+  transition: top 0.6s;
+  
+ 
  }
 body{
 background-color:#fdfdfd;
@@ -274,7 +366,7 @@ background-color:#fdfdfd;
 
 img{
 width:50%;
-height:350px;
+height:40vh;
 border-top:none;
 border-bottom:none;
 }
@@ -333,8 +425,8 @@ line-height:70px;
 position:absolute;
 width:50vw;
 margin-top:-44px;
-height:calc(100vh - 375px);
-margin-left:25vw;
+height:calc(100vh - 35vh);
+margin-left:25%;
 
 background-color:#fff;
 text-align:left;
@@ -541,15 +633,78 @@ height:30px;
  
 }
 
-<!-- FOR MOBILE -->
 
 </style>
+<script>
+  $(document).ready(()=>{
+    document.getElementById('header').style.display="none"
+    document.getElementById('footer').style.display="none"
+  })
+ 
+//   var prevScrollpos = window.pageYOffset;
+// window.onscroll = function() {
+//     var x = document.getElementById("header");
+//     var y = document.getElementById("footer");
+
+// var currentScrollPos = window.pageYOffset;
+//     if(x.style.display==="none"&&y.style.display==="none" ||x.style.display==="block"&&y.style.display==="block"  ){ 
+//         x.style.display="block";
+//         y.style.display="block";
+
+// if (prevScrollpos < currentScrollPos) {
+   
+//    document.getElementById("header").style.top = "-50px";
+//    document.getElementById('footer').style.bottom="0"
+//    } else {
+// document.getElementById("header").style.top = "0px";
+// document.getElementById('footer').style.bottom="-50px"
+// }
+// prevScrollpos = currentScrollPos;
+
+//     }  
+//  }
+//     function toggle(data){
+//         if(data==='S'){
+//             window.location="../search.html";
+//         }
+//     }
+function myFunction() {
+var x = document.getElementById("header");
+var y = document.getElementById("footer");
+
+if (x.style.display === "none") {
+x.style.display = "block";
+console.log('my funtion clicked')
+x.style.top="0px"
+
+} else {
+x.style.display = "none";
+x.style.top="-10vh"
+}
+if (y.style.display === "none") {
+y.style.display = "block";
+y.style.bottom="0px"
+
+} else {
+y.style.display = "none";
+y.style.bottom="-10vh"
+}
+}
+
+
+</script>
 </head>
-<body>
-<div class="desktophead">
+<body onclick="myFunction()">
+<div class="desktophead d-flex justify-content-between" id="header" >
+  
+    <i class="fa fa-sun" style="color:#00c4cc;padding-top: 6px;padding-bottom: 21px;margin-left: 20px;margin-top: 5px;"></i>
+            <span style="color:grey;" class="lightText">Light</span>
+                  <h3  style="color:grey;">Top Deals</h3>
+                  <a href="../filter.html"> <i ><img style="width:28px; height:28px;margin-top: 3px;margin-right: -6px;padding-top: 2px;"src="./images/filter1.png"></img></i>
+        <br><span style="color:grey">Filter</span></a>
 
 </div>	
-<div data-role="page" id="pageone" onclick="myFunction()">
+<div data-role="page" id="pageone" >
 	
 
   
@@ -667,8 +822,15 @@ OxygenOS 10.5.10 is also rolling out for the OnePlus in a few flavors. For those
 
 </div>
 
+<div class="footer d-flex justify-content-between d-none" id="footer" >
+  <i style="text-align: center;"><a href="#" style="text-decoration: none; color:grey"><img src="/Deals/images/menu.png" class="img-respons"></img></a><br>Menu</i>
+  <i style="text-align: center;"><a href="#" style="text-decoration: none; color:grey;"><img src="/Deals/images/bookmark.png" class="img-respons"></img><br>Bookmark</a></i>
+  <i style="text-align: center;"><a href="#" style="text-decoration: none; color:grey;"><img src="/Deals/images/share.png" class="img-respons"></img><br>Share</a></i>
+  <i style="text-align: center;"><a href="#" style="text-decoration: none; color:grey;"><img src="/Deals/images/refresh.png" class="img-respons"></img><br>Refresh</a></i>
+  <i style="text-align: center;"><a href="/search.html"style="text-decoration: none; color:grey;"><img src="/Deals/images/search1.png" class="img-respons"></img><br>Search</a></i>
+
+</div>
+
 </div> 
-
-
 </body>
 </html>
