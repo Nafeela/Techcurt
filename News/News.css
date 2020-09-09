@@ -93,7 +93,7 @@ body {
   }
   .content{
       
-    
+    height: 74vh;
     background-color: #fbfbfb;
     border-radius: 20px 20px;
     margin-top:-10%;
@@ -126,12 +126,12 @@ body {
       
     #header{
       position: absolute;
-      left: 10%;
+      left: 7.5%;
       right: 0;
       top: 0;
       background-color: #fbfbfb;
       height: 50px;
-      width:75%;
+      width:76.1%;
       border-radius:0px 0px 10px 10px;
       
       z-index:99;
@@ -150,12 +150,12 @@ body {
     }
     #footer{
       position: absolute;
-      left: 10%;
+      left: 7.7%;
       right: 0;
       bottom:0;
       background-color: #fbfbfb;   
       height: 50px;
-      width:75%;
+      width:76.1%;
      
   border-radius:10px 10px 0px 0px;
   position: fixed;
@@ -173,22 +173,24 @@ body {
       width: 100%;
     }
     .content{
-        
-        width: 94%;
-        background-color: #fbfbfb;
-        border-radius: 20px 20px;
-        margin-top:-10%;
-        display: grid;
-        border-top: 1px solid white;
+      
     
-    }
-    .head-image{
-        
-
-    margin-left: 5px;
-    border-radius: 20px;
-
-    }
+      background-color: #fbfbfb;
+      border-radius: 20px 20px;
+      margin-top:-5%;
+      width: 133.5vh;
+      display: grid;
+      margin-left: 53px;
+      border-top: 1px solid white;
+  
+  }
+  
+  .image-back{
+     margin-left: 53px;
+     width: 133vh;
+     height: 32vh;
+  
+  }
     .bottomheading{
      
         text-align: center;
@@ -245,24 +247,23 @@ body {
     -o-box-shadow: 10 10px 10px 0 gray;
   }
   .content{
-        
-    width: 93%;
+      
+    
     background-color: #fbfbfb;
     border-radius: 20px 20px;
     margin-top:-10%;
+    margin-left: 88px;
+    width: 149vh; 
     display: grid;
     border-top: 1px solid white;
 
 }
-.head-image{
-    
-margin-top: 30px;
-margin-left: 6px;
-border-radius: 20px;
 
-}
 .image-back{
-    background-repeat: no-repeat;
+   margin-left: -8px;
+   width: 105vh;
+   height: 32vh;
+
 }
 .bottomheading{
     margin-top: 10px;
@@ -428,13 +429,14 @@ border-radius: 20px;
     }
     .head-image{
         
-    margin-top: 30px;
-    margin-left: 6px;
-    border-radius: 20px;
+      margin-top: 30px;
+      left: 40%;
+      right: 25%;
+      width:50.5%;
 
     }
     .image-back{
-
+       
         background-repeat: no-repeat;
     }
     .bottomheading{
@@ -483,7 +485,7 @@ border-radius: 20px;
    bottom: 0;
    background-color: #fbfbfb;
       height: 50px;
-      width:66%;
+      width:66.2%;
   
     border-radius:10px 10px 0px 0px;
     position: fixed;
@@ -496,12 +498,13 @@ border-radius: 20px;
       -o-box-shadow: 10 10px 10px 0 gray;
       }
       .content{
-        
-        width: 101%;
+       
+        width: 100%;
         background-color: #fbfbfb;
         border-radius: 20px 20px;
         margin-top:-12%;
         display: grid;
+        
         margin-left: -5px;
         border-top: 1px solid white;
     
