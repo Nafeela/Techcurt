@@ -260,7 +260,7 @@ body {
 }
 
 .image-back{
-   margin-left: -8px;
+   margin-left: 88px;
    width: 105vh;
    height: 32vh;
 
@@ -499,7 +499,7 @@ body {
       }
       .content{
        
-        width: 100%;
+        width: 101%;
         background-color: #fbfbfb;
         border-radius: 20px 20px;
         margin-top:-12%;

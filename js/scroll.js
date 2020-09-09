@@ -18,7 +18,8 @@ document.getElementById('footer').style.bottom="-50px"
 }
 prevScrollpos = currentScrollPos;
 
-    }   }
+    }  
+ }
     function toggle(data){
         if(data==='S'){
             window.location="../search.html";
@@ -45,28 +46,4 @@ y.style.bottom="0px"
 y.style.display = "none";
 }
 }
-
-$(document).ready(()=>{
-    fetch('/js/header.html')
-    .then(data=>{
-        return data.text();
-    })
-    .then(dataJson=>{
-        document.getElementById('headerID').innerHTML=dataJson;
-    })
-    fetch('/js/footers.html')
-    .then(data=>{
-        return data.text()
-    })
-    .then(dataJSon=>{
-        document.getElementById('footer').innerHTML=dataJSon;
-    })
-    // fetch('/filter.html')
-    // .then(data=>{
-    //     return data.text()})
-    //     .then(dataJs=>{
-    //         document.getElementById('filter').innerHTML=dataJs
-    //     })
-
-})
 
