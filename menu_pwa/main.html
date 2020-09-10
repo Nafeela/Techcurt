@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Swiper demo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+	<!-- Link Swiper's CSS -->
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+	<style>
+		html,
+		body {
+			position: relative;
+			height: 100%;
+         
+           
+           
+		}
+
+		body {
+			background: #eee;
+			font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+			font-size: 14px;
+			color: #000;
+			margin: 0;
+
+			padding: 0;
+		}
+
+		.swiper-container {
+			width: 100%;
+			height: 100%;
+		}
+
+		.swiper-slide {
+			text-align: center;
+			font-size: 18px;
+			background: #fff;
+            width:100%;
+/* Center slide text vertically */
+			
+			display: inline-block;
+			
+		}
+
+		
+
+		
+    </style>
+  
+</head>
+
+<body >
+
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide " id="menu" style="width: 100%;">
+
+            </div>
+			<div class="swiper-slide " id="all" style="width: 100%;">
+           
+            </div>
+		</div>
+	</div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        
+        <script>
+           window.onload=()=>{
+            fetch('./menu_techcurt.html')
+            .then(data=>{
+                return data.text();
+            })
+            .then(dataS=>{
+                document.getElementById('menu').innerHTML=dataS
+            });
+            fetch('./techcurtnews1.html')
+            .then(data=>{
+                return data.text();
+            })
+            .then(dataS=>{
+                document.getElementById('all').innerHTML=dataS
+            })
+           }
+       
+            
+            var swiper = new Swiper('.swiper-container',{
+                slidesPerView: 'auto',
+      initialSlide: 1,
+      resistanceRatio: 0,
+      slideToClickedSlide: true,
+            });
+        </script>
+
+</body>
+
+</html>
