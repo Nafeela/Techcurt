@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>	
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="../css/search.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+<script>
+    $(document).ready(()=>{
+        $("#searchNews").focus(()=>{
+            
+            $('#search').removeClass('fa-search');
+            $('#search').addClass('fa-close');
+        });
+        $("#searchNews").focusout(()=>{
+            $('#search').removeClass('fa-close');
+            $('#search').addClass('fa-search');  
+          
+        
+        }); 
+        
+        $('#searchNews').keyup((data)=>{
+            document.getElementById('result').style.display="block";
+           
+            $('#result').html('');
+                var searchFl=$('#searchNews').val();
+                var exp=new RegExp(searchFl,"i");
+                var api="https://newsapi.org/v2/top-headlines?q="+searchFl+"&country=in&apiKey=bcb6a90c3f2d44ce962d5edf2eaa1b7a"
+                   console.log(api);
+                $.ajax({
+                    url:api,
+                    method:"GET",
+                    dataType:"json",
+                    success:function(data){
+                        let output="";
+                        var latestNews=data.articles;
+                        latestNews.map(news=>{
+                            $("#result").append('<div class="row d-flex list-group-item" style="margin-top:10px;padding-top:7px; height:70px;" ><div class="col-3"><img  alt="'+news.author+'"src="'+news.urlToImage+'" class="img-responsive" style="position: absolute; border-radius:50% ;width:50px;height:50px;margin-top:0px;"></img></div>    <div class="col-9" style="margin-top:0px ;margin-left:80px;color:#000;font-size:13px;"> <p>'+news.title+'</p></div> <div class="col-7" style="color:#888888; font-size:10px;margin-top:-10px;margin-left:75vw;"><p>'+new Date(news.publishedAt).getDate()+' days ago</p></div>  </div>')
+                           // $('#result').append('<ul class="list-group d-flex" style="flex-wrap:wrap" ><li class="list-group-item" style="justify-items:center; display:block;position: relative;margin-top:10px">'+news.title+'</li><img  alt="'+news.author+'"src="'+news.urlToImage+'" class="img-responsive" style="position: absolute; border-radius:20% ;width:50px;height:40px;display:block; margin:15px;"></ul>')
+         
+                        })
+                    },
+                    error:function(err){
+                        console.log(err)
+                    }
+                    
+                })
+            })  
+   });
+   function toggle(){
+       window.location="/index.html";
+   }
+   function back(){
+       window.location="/index.html"
+   }
+</script>
+<style>
+    #result{
+        position:absolute;
+        width: 85%;
+        max-width: 100vw;
+        cursor: pointer;
+        overflow-y: auto;
+        max-height: 80vh;
+        z-index: 1001;
+        color: #00c4cc;
+    }
+    #img{
+        right: 90%;
+        width: auto;
+        height: 30px;
+    }
+	
+	
+    </style>   
+<body>
+        <div class="container" >
+        <div class="wrap-search  m-b-23" >
+            <span class="fa fa-arrow-left" id="arrow" onclick="back()"></span>
+                           
+            <input class="search" type="text" name="username" placeholder="Search for News" id="searchNews">
+                        <i class="fa fa-search" id="search"></i> 
+
+            <span class="focus-search"></span>
+          
+        </div>
+        <div id="result" class="list-group" style="overflow-x:hidden;position: fixed;margin-left:-15px; width: 100%;" onclick="toggle()"></div>     
+        </div>
+        
+    
+    </body>
+
+
+</html>
