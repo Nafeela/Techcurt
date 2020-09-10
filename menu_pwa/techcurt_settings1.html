@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
+		<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+		<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="./loginjs.js" rel="javascript" ></script>
+<link type="text/html" href="./otp.html">
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+<style>
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css";
+
+@import "http://propeller.in/components/typography/css/typography.css";
+
+@import "http://propeller.in/components/button/css/button.css";
+
+@import "http://fonts.googleapis.com/icon?family=Material+Icons";
+@import "http://propeller.in/components/icons/css/google-icons.css";
+@media only screen and (max-width:500px) {
+#pageone{
+height:100%;
+margin-top:-10px;
+width:100%;
+background-color:#fff;
+overflow:hidden;
+}
+
+html {
+  height: 100%;
+}
+html body {
+  height: 100%;
+  overflow: hidden;
+  background-color:#fff;
+}
+html body .container-fluid.body-content {
+  position: absolute;
+  top: 50px;
+  bottom: 30px;
+  right: 0;
+  left: 0;
+  overflow-y: auto;
+}
+#heading {
+    position: absolute;
+    left:0;
+    right: 0;
+    top: 0;
+	background:#fff;    
+	height: 35px;
+	<!-- border-radius:0px 0px 30px 30px; -->
+
+}
+#footer {
+display:none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+	background:#fff;    
+	height: 35px;
+    height: 35px;
+	border-radius:30px 30px 0px 0px;
+}
+.fa-arrow-left{
+font-size:24px; 
+margin-left:15px;
+margin-top:7px;
+}
+.settingstitle{
+font-size:20px;
+top:2px;
+left:40%; 
+position:absolute;
+}
+.heading{
+margin-top:15%;
+font-size:20px;
+margin-left:41%;
+}
+.loginbtn{
+position:absolute;
+margin-left:31%; 
+border-radius:40px; 
+background-color:#00c4cc; 
+color:#fff; 
+height:30px;
+width:40%;
+font-size:15px;
+ margin-top:25%;
+ border:none;
+}
+.signup{
+position:absolute;
+margin-left:18%; 
+margin-top:37%;
+}
+.fa {
+  padding: 15px;
+  font-size: 13px;
+  width: 40px;
+  height:40px;
+  text-align:center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+	text-decoration:none;
+}
+
+.fa-twitter{
+background: #55ACEE;
+  color: white;
+  border-radius:50%;
+  	  margin-left:-10px;
+
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+    border-radius:50%;
+		  margin-left:0px;
+
+
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+      border-radius:50%;
+	  	  margin-left:-10px;
+
+}
+.fa-phone {
+  background: #a3a3a3;
+  color: white;
+      border-radius:50%;
+	  margin-left:0px;
+}
+.socialbutton{
+width:100%;
+margin-left:16%;
+margin-top:43%;	
+<!-- margin-left:25%; -->
+}
+.new1{
+width:100%;
+
+color:#
+}
+.new2{
+width:100%;
+margin-top:40%;
+}
+.new3{
+width:100%;
+margin-top:53%;
+}
+.avatar{
+position:absolute;
+border-radius:50%;
+width:23%;
+height:12%;
+margin-left:40%;
+margin-top:10%;
+}
+.noti{
+font-family:Arial, Helvetica, sans-serif;
+margin-top:40px;
+background-color:#fff;
+margin-left:-10%;
+}
+.switch {
+  position: absolute;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+  margin-left:90%;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 19px;
+  width: 19px;
+  right: 26px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #00c4cc;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #00c4cc;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(23px);
+  -ms-transform: translateX(23px);
+  transform: translateX(23px);
+}
+
+.slider.round {
+  border-radius: 30px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.lang{
+font-family:Arial, Helvetica, sans-serif;
+margin-top:90px;
+margin-left:-10%;
+width:50%;
+}
+.dropdown{
+  display: inline-block;
+	position:absolute;
+	width: 40px;
+  height: 24px;
+  right:15%;
+}
+.feedback{
+font-family:Arial, Helvetica, sans-serif;
+margin-top:10px;
+position:absolute;
+ margin-left:10%;
+}
+.terms{
+font-family:Arial, Helvetica, sans-serif;
+margin-top:60px;
+position:absolute;
+ margin-left:10%;
+}
+.privacy{
+font-family:Arial, Helvetica, sans-serif;
+margin-top:110px;
+position:absolute;
+ margin-left:10%;
+}
+a{
+color:#000;
+}
+a:hover{
+color:#00c4cc;
+text-decoration:none;
+}
+a:active{
+color:#00c4cc;
+text-decoration:none;
+}
+
+}
+
+
+
+@media only screen and (min-width:500px) {
+
+	#pageone{
+height:100%;
+margin-top:-30px;
+	background-color:#fff;
+width:50%;
+margin-left:25vw;
+}
+
+html {
+  height: 100%;
+}
+html body {
+  height: 100%;
+  overflow: hidden;
+}
+html body .container-fluid.body-content {
+  position: absolute;
+  top: 50px;
+  bottom: 30px;
+  right: 0;
+  left: 0;
+  overflow-y: auto;
+}
+#heading {
+    position: absolute;
+	width:50%;
+    left: 25vw;
+    right: 0;
+top:0;
+	background:#fff;    
+	height: 35px;
+	<!-- border-radius:0px 0px 30px 30px; -->
+
+}
+#footer {
+display:none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+	background:#fff;    
+	height: 35px;
+    height: 35px;
+	border-radius:30px 30px 0px 0px;
+}
+.fa-arrow-left{
+font-size:24px; 
+margin-left:25px;
+margin-top:30px;
+}
+.settingstitle{
+font-size:20px;
+top:2px;
+margin-left:40%;
+position:absolute;
+}
+.heading{
+margin-top:8%;
+font-size:20px;
+text-align:center;
+margin-left:8%;
+}
+.loginbtn{
+position:absolute;
+margin-left:22%; 
+border-radius:40px; 
+background-color:#00c4cc; 
+color:#fff; 
+height:40px;
+width:10%;
+font-size:15px;
+ margin-top:8%;
+ border:none;
+}
+.signup{
+position:absolute;
+margin-left:20%; 
+margin-top:200px;
+}
+.fa {
+  padding: 15px;
+  font-size: 13px;
+  width: 40px;
+  height:40px;
+  text-align:center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+	text-decoration:none;
+}
+
+.fa-twitter{
+background: #55ACEE;
+  color: white;
+  border-radius:50%;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+    border-radius:50%;
+
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+      border-radius:50%;
+}
+.fa-phone {
+  background: #a3a3a3;
+  color: white;
+      border-radius:50%;
+	  margin-left:10px;
+}
+.socialbutton{
+width:50%;
+margin-left:18vw;
+margin-top:28%;	
+<!-- margin-left:42%; -->
+}
+.new1{
+color:#d3d3d3;
+}
+.new2{
+margin-top:20%;
+}
+.new3{
+margin-top:25%;
+}
+.avatar{
+position:absolute;
+border-radius:50%;
+width:7%;
+height:13%;
+margin-left:23.5%;
+margin-top:3%;
+
+}
+.noti{
+font-family:Arial, Helvetica, sans-serif;
+margin-top:40px;
+background-color:#fff;
+margin-left:-20%;
+}
+.switch {
+  position: absolute;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+  margin-left:47%;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 19px;
+  width: 19px;
+  right: 26px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #00c4cc;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #00c4cc;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(23px);
+  -ms-transform: translateX(23px);
+  transform: translateX(23px);
+}
+
+.slider.round {
+  border-radius: 30px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.lang{
+font-family:Arial, Helvetica, sans-serif;
+margin-top:90px;
+margin-left:-20%;
+width:50%;
+}
+.dropdown{
+  display: inline-block;
+	position:absolute;
+	width: 40px;
+  height: 24px;
+  right:36%;
+}
+.feedback{
+font-family:Arial, Helvetica, sans-serif;
+margin-top:10px;
+position:absolute;
+ margin-left:10%;
+}
+.terms{
+font-family:Arial, Helvetica, sans-serif;
+margin-top:60px;
+position:absolute;
+ margin-left:10%;
+}
+.privacy{
+font-family:Arial, Helvetica, sans-serif;
+margin-top:110px;
+position:absolute;
+ margin-left:10%;
+}
+a{
+color:#000;
+}
+a:hover{
+color:#000;
+text-decoration:none;
+}
+a:active{
+color:#000;
+text-decoration:none;
+}
+
+}
+
+</style>
+<script>
+
+            function showrate(){
+			$("#rate_btn").show();
+			}
+			function showhelp(){
+			$("#help_btn").show();
+			$("#rate_btn").hide();
+			}
+		
+			
+</script>
+</head>
+<body>
+<div data-role="page" id="pageone">
+		
+  <div id="heading">     
+<i class="fa fa-arrow-left" style="font-size:24px; margin-left:0px;margin-top:-10px;"></i>
+
+ </div>
+ 
+<div class="wrapper">
+<img src="images/avatar3.png" class="avatar" alt="avatar" id="profile-pic">
+  
+  <div class="heading" ><b id="user_name">Hey Pal!</b></div>
+						
+							<button class="loginbtn" id="loginbtn">
+								Login / Signup
+							</button>
+						</div>
+
+					<div class="txt1 signup">
+						<span>
+							To save your likes & Bookmarks
+						</span>
+					</div>
+					<div class="socialbutton" id="socialbutton">
+            <a class="btn" onclick="googlelogin()"><span class="fa fa-google fa-lg" ></span></a>
+            <a class="btn" onclick="facebooklogin()"><span class="fa fa-facebook fa-lg"></span></a>
+                            
+            <a class="btn "  onclick="twitterlogin()"><span class="fa fa-twitter fa-lg"></span></a>
+        <a href="./otp.html" class="loginModal" ><span class="fa fa-phone fa-lg"></span></a>
+				
+					</div>
+<hr class="new1">
+
+					
+  <div class="noti"><p style="position:absolute; margin-left:20%;">Notification</p>
+	<label class="switch">
+	<input type="checkbox" checked>
+	<span class="slider round"></span>
+	</div>
+	<div class="lang">
+	<p style="position:absolute; margin-left:20%;">Languages<p>
+	<div class="dropdown">
+	<select class="selectpicker">
+  <option>English</option>
+  <!-- <option>French</option> -->
+  <!-- <option>Tamil</option> -->
+</select>
+</div>
+	</div>
+<hr class="new2">
+<div class="feedback"><a href="mailto:nafeelabanu.20it@licet.ac.in">Give us feedback</a></div>
+<div class="terms"><a href="#" onclick="window.open('Terms&cond.html', 'win', 'width=400,height=400');">Terms & Conditions</a></div>
+<div class="privacy"><a href="#" onclick="window.open('privacy.html', 'win', 'width=400,height=400');">Privacy</a></div>
+<hr class="new3">
+  <!-- <div class="rate"><p style="position:absolute; margin-left:20%; margin-top:100px;">Rate us</p></div> -->
+<!-- <div class="rating" style="position:absolute; margin-top:90px;"> -->
+      <!-- <input type="radio" id="star10" name="rating" value="10" onclick="showrate()"/><label for="star10" title="Rocks!">5 stars</label> -->
+      <!-- <input type="radio" id="star9" name="rating" value="9" onclick="showrate()"/><label for="star9" title="Rocks!">4 stars</label> -->
+      <!-- <input type="radio" id="star8" name="rating" value="8" onclick="showhelp()"/><label for="star8" title="Pretty good">3 stars</label> -->
+      <!-- <input type="radio" id="star7" name="rating" value="7" onclick="showhelp()"/><label for="star7" title="Pretty good">2 stars</label> -->
+      <!-- <input type="radio" id="star6" name="rating" value="6" onclick="showhelp()"/><label for="star6" title="Meh">1 star</label> -->
+      
+    <!-- </div> -->
+	<!-- <div  id="help_btn" class="col-md-4 col-lg-5" style="position:absolute; margin-top:150px; width:55%;left:25%;"> -->
+      <!-- <button class="btn btn-primary btn-block" style=" background-color:#00c4cc;border-radius:45px;">Help us to improve</button> -->
+    <!-- </div> -->
+	<!-- <div id="rate_btn" class="col-md-4 col-lg-5" style="display:none;position:absolute; margin-top:150px; width:55%;left:25%;"> -->
+      <!-- <button class="btn btn-primary btn-block" style=" background-color:#00c4cc; border-radius:45px;">Rate on Playstore</button> -->
+    <!-- </div> -->
+	
+</div>
+</body>
+<script>
+//   var firebaseConfig = {
+//           apiKey: "AIzaSyCiG8WQOdtLtFktx0HsqfTzjmWM6_YV7Bw",
+//           authDomain: "techcurt-81cad.firebaseapp.com",
+//           databaseURL: "https://techcurt-81cad.firebaseio.com",
+//           projectId: "techcurt-81cad",
+//           storageBucket: "techcurt-81cad.appspot.com",
+//           messagingSenderId: "10107979866",
+//           appId: "1:10107979866:web:b3f1dbfe40259af7f57063",
+//           measurementId: "G-7X25RJF4Q9"
+//         };
+//         // Initialize Firebase
+// firebase.initializeApp(firebaseConfig);
+
+// function googlelogin(){
+ 
+//  var provider = new firebase.auth.GoogleAuthProvider();
+//  firebase.auth().signInWithPopup(provider).then(function(result) {
+//  // This gives you a Google Access Token. You can use it to access the Google API.
+//  var token = result.credential.accessToken;
+//  // The signed-in user info.
+//  var user = result.user;
+// // window.alert("signed in as"+user);
+//  // ...
+// })
+// .catch(function(error) {
+//  // Handle Errors here.
+//  var errorCode = error.code;
+//  var errorMessage = error.message;
+//  window.alert("error:"+errorMessage);
+//  // The email of the user's account used.
+//  var email = error.email;
+//  // The firebase.auth.AuthCredential type that was used.
+//  var credential = error.credential;
+//  // ...
+// });
+// }
+</script>
+</html>
