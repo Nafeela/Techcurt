@@ -1,15 +1,15 @@
 // (function($){
+//   $('.loginModal').on('click', function(e){
+      
+//     $('.limiter').show().load($(this).attr('href'));
+//   });
   
    
   
 // })(jQuery);
 
   window.onload=()=>{
-    // $('.loginModal').on('click', function(e){
-      
-    //   $('.limiter').show().load($(this).attr('href'));
-    // });
-     
+   
 
   var firebaseConfig = {
     apiKey: "AIzaSyCiG8WQOdtLtFktx0HsqfTzjmWM6_YV7Bw",
@@ -40,7 +40,7 @@
     if(user != null){
             var name=user.displayName!==null?user.displayName:"Hlo there!";
             document.getElementById("user_name").innerHTML =name;
-            var img=user.photoURL!==null?user.photoURL:"./images/avatar3.png";
+            var img=user.photoURL!==null?user.photoURL:"../images/avatar3.png";
             document.getElementById('profile-pic').src=img;
   
             
@@ -75,7 +75,7 @@ function googlelogin(){
         data.removeAttribute('onclick');  
         data.innerHTML="Logout"
         data.setAttribute('onclick','logout()')
-        window.location='./techcurt_settings.html'
+        window.location='../Settings.html'
         console.log(user)
 
       })
@@ -83,7 +83,7 @@ function googlelogin(){
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
-        window.location='./techcurt_settings.html'
+        window.location='../Settings.html'
         // The email of the user's account used.
         var email = error.email;
         // The firebase.auth.AuthCredential type that was used.
@@ -104,7 +104,7 @@ facebooklogin=()=>{
                 data.removeAttribute('onclick');
                 data.innerHTML="Logout"
                 data.setAttribute('onclick','logout()')
-                window.location='./techcurt_settings.html'
+                window.location='../Settings.html'
                 console.log(user)
         
             // ...
@@ -115,7 +115,7 @@ facebooklogin=()=>{
             // The email of the user's account used.
             var email = error.email;
             console.log(errorMessage)
-            window.location='./techcurt_settings.html'
+            window.location='../Settings.html'
             // The firebase.auth.AuthCredential type that was used.
             var credential = error.credential;
             // ...
@@ -138,7 +138,7 @@ twitterlogin=()=>{
     data.removeAttribute('onclick');
     data.innerHTML="Logout"
     data.setAttribute('onclick','logout()')
-    window.location='./techcurt_settings.html'
+    window.location='../Settings.html'
     
 // ...
     })
@@ -147,7 +147,7 @@ twitterlogin=()=>{
     window.alert(error.message)
     var errorCode = error.code;
     var errorMessage = error.message;
-    window.location='./techcurt_settings.html'
+    window.location='../Settings.html'
         console.log(errorMessage);
         console.log(error)
     });
@@ -189,8 +189,8 @@ verify=()=>{
       alert('SuccessFully Register')
       var user=result.user;
        console.log(user.phoneNumber);
-      window.location='./techcurt_settings.html'
-      window.close('./otp.html')
+      window.location='../Settings.html'
+      window.close('../otp.html')
       var data= document.getElementById('loginbtn')
       data.removeAttribute('onclick');
       data.innerHTML="Logout"
@@ -198,15 +198,15 @@ verify=()=>{
   })
   .catch(err=>{
       alert(err.message)
-      window.location='./techcurt_settings.html';
+      window.location='../Settings.html';
   });
 }
 function logout(){
   firebase.auth().signOut().then(()=>{
-    window.location='./techcurt_settings.html'
+    window.location='../Settings.html'
           document.getElementById('loginbtn').innerHTML="Login/Signup"
           document.getElementById("user_name").innerHTML="Hey Dude";
-          document.getElementById('profile-pic').src="./images/avatar3.png"
+          document.getElementById('profile-pic').src="../images/avatar3.png"
           var data= document.getElementById('loginbtn')
            data.setAttribute('onclick','login()')
   })
